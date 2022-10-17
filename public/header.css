@@ -1,0 +1,124 @@
+:root {
+    --color1: rgb(66, 95, 87);
+    --color2: rgb(173, 207, 159);
+    --color3: rgb(206, 216, 158);
+    --color4: rgb(255, 220, 174);
+  }
+  
+
+
+
+
+html {
+    font-family: 'Space Grotesk', sans-serif;
+   
+}
+
+header {
+    height : 10vh;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.header_logo-menu {
+    height: 5vh;
+}
+
+.header-category-text {
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 4vw;
+    color:black;
+}
+
+.header-logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-logo-container {
+
+    display: flex;
+    flex-direction: row;
+}
+
+.header_logo-container {
+    position: relative;
+    height: 7vh;
+    width: 7vh;
+}
+
+.logo {
+    
+    position:absolute;
+    height: 7vh;
+    animation: fade 10s infinite alternate;   
+
+}
+
+.logobottom {
+    animation-delay : 10s;
+}
+
+@keyframes fade {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    51% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  .header__menubutton.active > .header__menubutton, .header__menubutton:hover {
+    color: black;
+  }
+
+  .header__menubutton {
+    border: none;
+    background-color: transparent;
+    background-image: url("menu.png");
+    background-size: cover;
+    height: 6vh;
+    width: 6vh;
+    
+}
+
+
+
+
+.header__menu-dropdown-menu{
+    position:absolute;
+    left:0;
+    top: 10vh;
+    background-color: var(--color1);
+    opacity:0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    width: 60vw;
+    display: flex;
+    flex-direction:column;
+    z-index: 100;
+    
+}
+
+.header__menu-dropdown.active > .header__menubutton + .header__menu-dropdown-menu {
+    opacity:1;
+    transform: translateY(0);
+    pointer-events:all;
+
+}
+
+.header__menu-dropdown-text {
+    text-transform: uppercase;
+    padding: 2vh 1vh;
+    text-decoration: none;
+    color: white;
+}
+
+

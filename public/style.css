@@ -1,0 +1,163 @@
+:root {
+    --color1: rgb(118, 186, 153);
+    --color2: rgb(173, 207, 159);
+    --color3: rgb(206, 216, 158);
+    --color4: rgb(255, 220, 174);
+  }
+
+  /*GENERAL*/
+
+  .page-title {
+    font-size: 1.4rem;
+    color: black;
+    text-transform: uppercase;
+    margin: 0rem auto;
+    text-align: center;
+    padding: 2rem;
+    font-weight: bold;
+}
+
+.main {
+    background-color: white;
+    min-height: 100vh;
+}
+
+/* TITLE */
+
+.title__container {
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.title__logo {
+    max-height: 80%;
+    max-width: 80%;
+}
+
+.title__text {
+    font-size: 3vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 1rem;
+
+}
+
+
+/*HOME*/
+
+.container-credit {
+    position: relative;
+    width : 90vw;
+    height: 10vh;
+    max-width: 800px;
+    border-bottom: 1px solid darkgrey;
+    margin : 2vh auto;
+    padding: 1vh;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    
+}
+
+.text-credit {
+    font-size: 1.2rem ;
+    text-align: center;
+    padding : 1rem 0;
+    
+}
+
+.credit__logobyrow {
+    max-width:55%;
+    max-height: 55%;
+}
+
+/*ADMIN*/
+
+.container-admin {
+    width : 90vw;
+    max-width: 800px;
+    margin : 2vh auto;
+    padding: 1vh;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 slategrey;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.img-admin {
+    height: 8vh;
+    margin: auto auto;
+}
+
+.text-admin {
+    color: black;
+    margin: 0 auto;
+    padding: 2rem 0;
+    font-size: 1.3rem;
+    width: 60%;
+    text-decoration: none!important;
+    text-transform: uppercase;
+    
+}
+
+/*ADMIN -- ADDPLAYER*/
+
+.label-addplayer {
+    display: block;
+    color:black;
+    text-transform: uppercase;
+    text-align: center;
+
+    
+}
+
+.input-addplayer {
+    display: block;
+    
+}
+
+.form-addplayer {
+    display: inline-block;
+    margin: 2rem auto;
+    
+}
+
+.formcontainer-addplayer {
+    text-align: center;
+}
+
+/*ADMIN -- ADDPENALTY*/
+
+.label-addpenalty {
+    display: block;
+    color:black;
+    text-transform: uppercase;
+    text-align: center;
+
+    
+}
+
+.input-addpenalty {
+    display: block;
+    
+}
+
+.form-addpenalty {
+    display: inline-block;
+    margin: 2rem auto;
+    
+}
+
+.formcontainer-addpenalty {
+    text-align: center;
+}
+
+.admin__overcontainer {
+    text-decoration: none;
+}

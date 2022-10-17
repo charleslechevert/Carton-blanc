@@ -1,0 +1,44 @@
+<%- include("partials/headers") %>
+
+<div class="page-title">Fixe les règles</div>
+
+<div class="formcontainer-addpenalty">
+   <form class="form-addpenalty" method="POST" action="/add-penalty">
+      <label class="label-addpenalty" for="type">Raison de l'amende</label>
+      <select class="input-addpenalty" name="type" id="type">
+        <% for(typeOption of typeOptions) { %>
+        <option value="yellowcard"><%=typeOption%></option>
+        <% } %>
+      </select>
+      <label class="label-addpenalty" for="amount">Montant</label>
+      <input class="input-addpenalty" type="text" id="amount" name="amount" placeholder="5€">
+       <input type="submit" value="Valider">
+   
+   </form>
+   </div>
+
+   <table>
+      <thead>
+          <th> Raison </th>
+          <th> Montant</th>
+
+      </thead>
+      <tbody>
+          <% for(penalty of penalties) { %>
+          <tr>
+              <td>
+                  <p><%= penalty.type %></p>
+              </td>
+  
+              <td>
+                  <p><%= penalty.amount %></p>
+              </td>
+          </tr>
+          <% } %>
+      </tbody>
+  
+  </table>
+
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<%- include("partials/headers") %>
+
+<div class="page-title">Ajouter un nouveau carton blanc</div>
+
+<div class="formcontainer-addplayer">
+<form class="form-addplayer" method="POST" action="/add-player">
+    
+    <label class="label-addpenalty" for="player">Joueur</label>
+    <select class="input-addpenalty" name="player" id="player">
+        <% for(player of players) { %>
+        <option value="<%= player.pseudo %>"><%= player.pseudo %></option>
+        <% } %>
+    </select>
+
+    <label class="label-addpenalty" for="type">Raison de l'amende</label>
+    <select class="input-addpenalty" name="type" id="type">
+        <% for(penalty of penalties) { %>
+        <option value="type">Carton jaune</option>
+        <% } %>
+    </select>
+
+
+
+    <input type="submit" value="Valider">
+
+</form>
+</div>
+
+    
+</body>
+</html>

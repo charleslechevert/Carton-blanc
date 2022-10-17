@@ -1,0 +1,54 @@
+<%- include("partials/headers") %>
+
+<div class="page-title">Ajouter un joueur</div>
+
+<div class="formcontainer-addplayer">
+<form class="form-addplayer" method="POST" action="/add-player">
+    <label class="label-addplayer" for="fname">Prénom</label><br>
+    <input class="input-addplayer" type="text" id="fname" name="fname" placeholder="Johan">
+    <label class="label-addplayer" for="lname">Nom</label><br>
+    <input class="input-addplayer" type="text" id="lname" name="lname" placeholder="Micoud">
+    <label class="label-addplayer" for="pseudo">Pseudo</label><br>
+    <input class="input-addplayer" type="text" id="pseudo" name="pseudo" placeholder="Le nouveau Zidane">
+    <label class="label-addplayer" for="email">email</label><br>
+    <input class="input-addplayer" type="text" id="email" name="email" placeholder="yomicoud@werder.com">
+    <input type="submit" value="Valider">
+
+</form>
+
+<table>
+    <thead>
+        <th> Prénom </th>
+        <th> Nom</th>
+        <th> Pseudo</th>
+        <th> Email</th>
+    </thead>
+    <tbody>
+        <% for(player of players) { %>
+        <tr>
+            <td>
+                <p><%= player.fname %></p>
+            </td>
+
+            <td>
+                <p><%= player.lname %></p>
+            </td>
+
+            <td>
+                <p><%= player.pseudo %></p>
+            </td>
+                
+            <td>
+                <p><%= player.email %></p>
+            </td>
+        </tr>
+        <% } %>
+    </tbody>
+
+</table>
+
+</div>
+
+    
+</body>
+</html>
