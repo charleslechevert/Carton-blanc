@@ -1,0 +1,37 @@
+<%- include("partials/headers") %>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">La carte des amendes</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
+
+    <section>
+        <table class="penaltylist__container">
+            <thead class="penaltylist__header">
+                <th>Raison de l'amende</th>
+                <th>Montant</th>
+            </thead>
+            
+            <tbody>
+                <% for(penalty of penalties) { %>
+                <tr class="penaltylist__row">
+                    <td class="penaltylist__type">
+                        <p><%=penalty.type%></p>
+                    </td>
+                    <td class="penaltylist__amount">
+                        <p><%=penalty.amount%>€</p>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </section>
+
+
+
+    
+</main>
+    
+</body>
+</html>

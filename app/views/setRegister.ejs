@@ -1,30 +1,75 @@
 <%- include("partials/headers") %>
 
-<div class="page-title">Ajouter un nouveau carton blanc</div>
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">Ajouter un nouveau carton blanc</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
 
 <div class="formcontainer-addplayer">
-<form class="form-addplayer" method="POST" action="/add-player">
+<form class="form-addplayer" method="POST" action="/add-register">
     
-    <label class="label-addpenalty" for="player">Joueur</label>
-    <select class="input-addpenalty" name="player" id="player">
+    <label class="label-addplayer" for="player">Joueur</label>
+    <select class="input-addplayer" name="player" id="player">
         <% for(player of players) { %>
         <option value="<%= player.pseudo %>"><%= player.pseudo %></option>
         <% } %>
     </select>
 
-    <label class="label-addpenalty" for="type">Raison de l'amende</label>
-    <select class="input-addpenalty" name="type" id="type">
+    <label class="label-addplayer" for="type">Raison de l'amende</label>
+    <select class="input-addplayer" name="type" id="type">
         <% for(penalty of penalties) { %>
-        <option value="type">Carton jaune</option>
+        <option value="<%= penalty.type %>"><%= penalty.type %></option>
         <% } %>
     </select>
-
-
-
-    <input type="submit" value="Valider">
+    <input class="admin__addform-button"type="submit" value="Valider">
 
 </form>
 </div>
+
+<table class="admin__form">
+    <thead>
+        <th class="admin___headerform-text"> Date</th>
+        <th class="admin___headerform-text"> Jouer </th>
+        <th class="admin___headerform-text"> Raison</th>
+        <th class="admin___headerform-text"> Payé?</th>
+        <th class="admin___headerform-text"> Modifier</th>
+    </thead>
+    <tbody>
+        <% for(register of registers) { %>
+        <tr class="admin__row-form">
+            <td class="admin__cell-form">
+                <p><%= `${register.date.getDate()} - ${register.date.getMonth()} - ${register.date.getFullYear()} `%></p>
+            </td>
+            <td class="admin__cell-form">
+                <p><%= register.player_pseudo %></p>
+            </td>
+            <td class="admin__cell-form">
+                <p><%= register.penalty_type %></p>
+            </td>
+
+            <td class="admin__cell-form">
+                <% if(register.paid_status) { %>
+                    <img class="registerlist__form-paidlogo" src="paid.png" alt="">
+                <% } else { %>
+                    <img class="registerlist__form-paidlogo" src="notpaid.png" alt="">
+                <% } %>
+            </td>
+            <td class="admin__cell-form admin cell-form__modifier-container">
+                <button class="admin__cell-form__button">
+                    <img class="admin__cell-form__img" src="modify.png" alt="">
+                </button>
+                <a href="/setregister/delete/<%= register.id %>" class="admin__cell-form__button">
+                    <img class="admin__cell-form__img" src="delete.png" alt="">
+                </a>
+            </td>
+            
+          
+        </tr>
+        <% } %>
+    </tbody>
+
+</table>
 
     
 </body>

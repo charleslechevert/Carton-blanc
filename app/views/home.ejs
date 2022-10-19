@@ -3,10 +3,31 @@
 <main class="main">
     <%- include("partials/title") %>
 
-    <div class="container-credit">
-        <img class="credit__logobyrow"src="flyingmoney.png" alt="flyingmoney">
-        <p class="text-credit">Darius doit 5€ à la caisse</p>
-    </div>
+    <section class="home__sentence-container">
+        <img class="home__sentence-logo" src="sentence.png" alt="">
+        <p class="home__sentence-text">La phrase de la semaine : <br><strong>"Ma montre est terminée..."</strong> Hugo Ekitike </p>
+    </section>
+
+    <section class="home__box-container">
+        <div class="home__box-resume">
+            <div class="home__box-resume-split">
+                <h2 class="home__box-resume-amount"><%=sumPenalties.sum %>€</h2>
+                <h3 class="home__box-resume-descr">Total des amendes distribués</h3>
+            </div>
+            <div>
+                <% if(sumPenaltiesPaid.sum) { %>
+                <h2 class="home__box-resume-amount"><%=sumPenaltiesPaid.sum %>€</h2>
+                <% } else { %>
+                <h2 class="home__box-resume-amount">0€</h2>
+                <% } %>
+                <h3 class="home__box-resume-descr">Total des amendes <br> payées</h3>
+            </div>
+        </div>
+        <div class="homme__visual">
+            <img class="home__visual-img"src="pig.png" alt="">
+        </div>
+    </section>
+    
 </main>
     
 </body>

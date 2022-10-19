@@ -4,42 +4,62 @@
 
 <div class="formcontainer-addplayer">
 <form class="form-addplayer" method="POST" action="/add-player">
-    <label class="label-addplayer" for="fname">Prénom</label><br>
-    <input class="input-addplayer" type="text" id="fname" name="fname" placeholder="Johan">
-    <label class="label-addplayer" for="lname">Nom</label><br>
-    <input class="input-addplayer" type="text" id="lname" name="lname" placeholder="Micoud">
-    <label class="label-addplayer" for="pseudo">Pseudo</label><br>
-    <input class="input-addplayer" type="text" id="pseudo" name="pseudo" placeholder="Le nouveau Zidane">
-    <label class="label-addplayer" for="email">email</label><br>
-    <input class="input-addplayer" type="text" id="email" name="email" placeholder="yomicoud@werder.com">
-    <input type="submit" value="Valider">
+    <div class="admin__container-add-items">
+        <div>
+            <label class="label-addplayer" for="fname">Prénom</label>
+            <input class="input-addplayer" type="text" id="fname" name="fname" placeholder="Johan">
+        </div>
+        <div>
+            <label class="label-addplayer" for="lname">Nom</label>
+            <input class="input-addplayer" type="text" id="lname" name="lname" placeholder="Micoud">
+        </div>
+        <div>
+            <label class="label-addplayer" for="pseudo">Pseudo</label>
+            <input class="input-addplayer" type="text" id="pseudo" name="pseudo" placeholder="Le nouveau Zidane">
+        </div>
+        <div>
+            <label class="label-addplayer" for="email">email</label>
+            <input class="input-addplayer" type="text" id="email" name="email" placeholder="yomicoud@werder.com">
+        </div>
+    </div>
+    
+    <input class="admin__addform-button"type="submit" value="Valider">
 
 </form>
 
-<table>
+<table class="admin__form">
     <thead>
-        <th> Prénom </th>
-        <th> Nom</th>
-        <th> Pseudo</th>
-        <th> Email</th>
+        <th class="admin___headerform-text"> Prénom </th>
+        <th class="admin___headerform-text"> Nom</th>
+        <th class="admin___headerform-text"> Pseudo</th>
+        <th class="admin___headerform-text"> Email</th>
+        <th class="admin___headerform-text"> Modifier</th>
     </thead>
     <tbody>
         <% for(player of players) { %>
-        <tr>
-            <td>
+        <tr class="admin__row-form">
+            <td class="admin__cell-form">
                 <p><%= player.fname %></p>
             </td>
 
-            <td>
+            <td class="admin__cell-form">
                 <p><%= player.lname %></p>
             </td>
 
-            <td>
-                <p><%= player.pseudo %></p>
+            <td class="admin__cell-form">
+                <p><%= player.pseudo%></p>
             </td>
                 
-            <td>
-                <p><%= player.email %></p>
+            <td class="admin__cell-form">
+                <p><%- player.email.replace(/@/g,"<br>@")%></p>
+            </td>
+            <td class="admin__cell-form admin cell-form__modifier-container">
+                <button class="admin__cell-form__button">
+                    <img class="admin__cell-form__img" src="modify.png" alt="">
+                </button>
+                <a href="/setplayer/delete/<%= player.id %>" class="admin__cell-form__button">
+                    <img class="admin__cell-form__img" src="delete.png" alt="">
+                </a>
             </td>
         </tr>
         <% } %>

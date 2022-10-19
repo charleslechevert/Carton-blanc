@@ -1,0 +1,49 @@
+<%- include("partials/headers") %>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">Le journal des amendes</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
+
+
+<section >
+    <table class="penaltylist__container">
+        <thead class="penaltylist__header">
+            <th>Date</th>
+            <th>Joueur</th>
+            <th>Raison de l'amende</th>
+            <th>Payé</th>
+        </thead>
+        
+        <tbody>
+            <% for(register of registers) { %>
+            <tr class="penaltylist__row">
+                <td class="registerlist__date">
+                    <p><%= `${register.date.getDate()}-${register.date.getMonth()}-${register.date.getFullYear()} `%></p>
+                </td>
+                <td class="registerlist__joueur">
+                    <p><%=register.player_pseudo%></p>
+                </td>
+                <td class="registerlist__raison">
+                    <p><%=register.penalty_type%></p>
+                </td>
+                <td class="registerlist__paid">
+                    <% if(register.paid_status) { %>
+                        <img class="registerlist__form-paidlogo" src="paid.png" alt="">
+                    <% } else { %>
+                        <img class="registerlist__form-paidlogo" src="notpaid.png" alt="">
+                    <% } %>
+                </td>
+                
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</section>
+
+
+</main>
+    
+</body>
+</html>

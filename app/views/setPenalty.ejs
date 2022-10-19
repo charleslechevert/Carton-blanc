@@ -2,37 +2,50 @@
 
 <div class="page-title">Fixe les règles</div>
 
-<div class="formcontainer-addpenalty">
-   <form class="form-addpenalty" method="POST" action="/add-penalty">
-      <label class="label-addpenalty" for="type">Raison de l'amende</label>
-      <select class="input-addpenalty" name="type" id="type">
+<div class="formcontainer-addplayer">
+   <form class="form-addplayer" method="POST" action="/add-penalty">
+    <div class="admin__container-addpenalty">
+      <label class="label-addplayer" for="type">Raison de l'amende</label>
+      <select class="input-addplayer" name="type" id="type">
         <% for(typeOption of typeOptions) { %>
-        <option value="yellowcard"><%=typeOption%></option>
+        <option value="<%=typeOption%>"><%=typeOption%></option>
         <% } %>
       </select>
-      <label class="label-addpenalty" for="amount">Montant</label>
-      <input class="input-addpenalty" type="text" id="amount" name="amount" placeholder="5€">
-       <input type="submit" value="Valider">
+    </div>
+    <div class="admin__container-addpenalty">
+      <label class="label-addplayer" for="amount">Montant</label>
+      <input class="input-addplayer" type="text" id="amount" name="amount" placeholder="5€">
+    </div>
+    <input class="admin__addform-button"type="submit" value="Valider">
    
    </form>
    </div>
 
-   <table>
+   <table class="admin__form">
       <thead>
-          <th> Raison </th>
-          <th> Montant</th>
+          <th class="admin___headerform-text"> Raison </th>
+          <th class="admin___headerform-text"> Montant</th>
+          <th class="admin___headerform-text"> Modifier</th>
 
       </thead>
       <tbody>
           <% for(penalty of penalties) { %>
-          <tr>
-              <td>
+          <tr class="admin__row-form">
+              <td class="admin__cell-form">
                   <p><%= penalty.type %></p>
               </td>
   
-              <td>
+              <td class="admin__cell-form">
                   <p><%= penalty.amount %></p>
               </td>
+              <td class="admin__cell-form admin cell-form__modifier-container">
+                <button class="admin__cell-form__button">
+                    <img class="admin__cell-form__img" src="modify.png" alt="">
+                </button>
+                <a href="/setpenalty/delete/<%= penalty.id %>" class="admin__cell-form__button">
+                    <img class="admin__cell-form__img" src="delete.png" alt="">
+                </a>
+            </td>
           </tr>
           <% } %>
       </tbody>
