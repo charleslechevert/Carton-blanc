@@ -18,6 +18,18 @@ async function findRegisters() {
   return registers;
 }
 
+async function findRegistersNotPaid() {
+  const result = await db.query("SELECT * FROM register WHERE paid_status='false';")
+  const registers = result.rows;
+  return registers;
+}
+
+async function findSettings() {
+  const result = await db.query("SELECT * FROM settings;")
+  const settings = result.rows[0];
+  console.log(settings)
+  return settings;
+}
 
 
 async function insertOnePlayer(player) { // Note, on peut aussi destructuré au niveau du paramètre
@@ -106,10 +118,40 @@ async function insertOnePlayer(player) { // Note, on peut aussi destructuré au 
 
   async function sumPlayers() {
     const result = await db.query(
-      "SELECT player_pseudo, sum(penalty_amount) FROM register GROUP BY player_pseudo;")
-    return result.rows[0];
+      "SELECT player_pseudo, sum(penalty_amount) FROM register GROUP BY player_pseudo ORDER BY sum(penalty_amount) DESC;")
+      console.log(result)
+    return result.rows;
+  }
+  async function settlePaymentAndRedirect(register) {
+    const result = await db.query(
+      `UPDATE register SET paid_status = 'true' WHERE id IN(${register});`)
+      console.log(result)
+    return result.rows;
   }
 
+  async function starPlayer() {
+    const result = await db.query(
+      "SELECT player_pseudo, sum(penalty_amount) FROM register GROUP BY player_pseudo ORDER BY sum(penalty_amount) DESC LIMIT 1;")
+    return result.rows[0];
+
+  }
+
+  async function insertSettings(settings) {
+    const { target } = settings;
+    const result = await db.query( // Construire la requête pour insérer un étudiant dans la BDD
+      `UPDATE settings SET data = '${target}' WHERE name = 'target';`)
+
+    // Je veux retourner tout l'étudiant inséré
+    return result.rows[0];
+    
+  }
+
+  async function statByType() {
+    const result = await db.query(
+      "SELECT penalty_type, sum(penalty_amount) FROM register GROUP BY penalty_type ORDER BY sum(penalty_amount) DESC;")
+      console.log(result.rows);
+    return result.rows;
+  }
   
 
 module.exports = {
@@ -124,5 +166,11 @@ module.exports = {
     deleteRegister,
     sumPenalties,
     sumPenaltiesPaid,
-    sumPlayers
+    sumPlayers,
+    findRegistersNotPaid,
+    settlePaymentAndRedirect,
+    starPlayer, 
+    insertSettings,
+    findSettings,
+    statByType
 };

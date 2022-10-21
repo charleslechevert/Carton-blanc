@@ -5,3 +5,31 @@
         <p class="title__text">Classement des joueurs</p>
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
+
+<section>
+    <table class="penaltylist__container">
+        <thead class="penaltylist__header">
+            <th>Rang</th>
+            <th>Joueur</th>
+            <th>Amendes</th>
+        </thead>
+        <tbody>
+            <% for(let sumPlayer in sumPlayers) { %>
+            <tr class="playerranking__row">
+                <td class="playerranking__top">
+                    <p class="playerranking__top-text">Top <%- parseInt(sumPlayer)+1 %></p>
+                    <% if(sumPlayer == 0 ) { %>
+                    <img class="playerranking__top-crown" src="crown.png" alt="">
+                    <%} else if(sumPlayer ==1) { %>
+                    <img class="playerranking__top-crown" src="crown2.png" alt="">
+                    <% } else if(sumPlayer ==2) { %>
+                        <img class="playerranking__top-crown" src="crown3.png" alt="">
+                        <% } %>
+                </td>
+                <td class="playerranking__player"><%= sumPlayers[sumPlayer].player_pseudo %></td>
+                <td class="playerranking__amount"><%= sumPlayers[sumPlayer].sum %>€</td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</section>

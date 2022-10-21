@@ -1,0 +1,33 @@
+<%- include("partials/headers") %>
+<script src="stats.js" defer></script>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">Statistiques</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
+
+    
+
+    <section class="stats__piechart-container">
+        <div class="stats__piechart"></div>
+        <div class="stats__piechart-descr">
+            <h1 class="stats__piechart-title">Total par type d'amendes</h1>
+            <table class="stats__piechart-table" >
+                <tbody >
+                    <% for(statByType of statsByType) { %>
+                    <tr class="stats__piechart-row">
+                        <td class="stats__perchart-label"><%= statByType.penalty_type %></td>
+                        <td class="stats__piechart-amount"><%= statByType.sum %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+    </section>
+
+    </main>
+
+</body>
+</html>

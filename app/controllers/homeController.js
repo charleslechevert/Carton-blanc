@@ -14,14 +14,24 @@ async registerList (req,res) {
     async home (req,res) {
         const sumPenalties = await dataMapper.sumPenalties();
         const sumPenaltiesPaid = await dataMapper.sumPenaltiesPaid();
-        console.log("CHECK")
-        console.log(sumPenaltiesPaid)
-        res.render("home", { sumPenalties, sumPenaltiesPaid })
+        const starPlayer = await dataMapper.starPlayer();
+        const settings = await dataMapper.findSettings();
+        
+        
+        res.render("home", { sumPenalties, sumPenaltiesPaid, starPlayer, settings})
     },
     async playerRanking (req,res) {
         const sumPlayers = await dataMapper.sumPlayers();
+        console.log(sumPlayers)
         res.render("playerRanking", { sumPlayers })
         
+    },
+    async stats (req,res)  {
+        const statsByType = await dataMapper.statByType();
+        res.render("stats", { statsByType })
+    },
+    async checkout (req,res) {
+        res.render("checkout")
     }
 
 };

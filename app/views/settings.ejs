@@ -1,0 +1,22 @@
+<%- include("partials/headers") %>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">Règle les paramètres du club</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
+
+    <div class="formcontainer-addplayer">
+        <form class="form-addplayer" method="POST" action="/add-settings" autocomplete="on">
+                <div>
+                    <label class="label-addplayer" for="fname">Objectif de la cagnotte</label>
+                    <textarea cols="40" rows="3" class="admin__settings-obj-input" type="text" id="target" name="target" placeholder="Aller voir un match de l'EAG avec les jeunes et acheter une tireuse à bières pour le foyer."><%=settings.data%></textarea>
+                </div>
+            <input class="admin__addform-button"type="submit" value="Valider">
+        
+        </form>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 <main class="main">
     <div class="title__container">
-        <p class="title__text">Ajouter un nouveau carton blanc</p>
+        <p class="title__text">Ajoute un nouveau carton blanc</p>
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
 
@@ -55,6 +55,7 @@
                     <img class="registerlist__form-paidlogo" src="notpaid.png" alt="">
                 <% } %>
             </td>
+            <% if(!register.paid_status) { %>
             <td class="admin__cell-form admin cell-form__modifier-container">
                 <button class="admin__cell-form__button">
                     <img class="admin__cell-form__img" src="modify.png" alt="">
@@ -63,6 +64,7 @@
                     <img class="admin__cell-form__img" src="delete.png" alt="">
                 </a>
             </td>
+            <% } %>
             
           
         </tr>

@@ -17,9 +17,12 @@
     font-weight: bold;
 }
 
-.main {
+.home__main {
     background-color: white;
     min-height: 100vh;
+    line-height:1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 strong {
@@ -98,6 +101,8 @@ strong {
 
 .home__box-container {
     margin : 2vh 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .home__box-resume {
@@ -134,11 +139,72 @@ strong {
     justify-content: center;
 }
 
-.home__visual-img {
-    height:15vh;
+.home__visual-wrapper {
+    position: relative;
+    display: inline-block
+}
+
+.home__visual-filter {
+    
+    filter: brightness(50%);
+    height:18vh;
     width: auto;
     
+    
+}
 
+.home__visual-img {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    object-fit:cover;
+    object-position: right bottom;
+    
+    
+    
+
+}
+
+.home__details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-start;
+}
+
+.home__subdetail-container {
+    width: 40%;
+}
+
+.home__subdetail-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.5vh 0;
+    line-height: 1rem;
+}
+
+.home__subdetail-text {
+    text-align: justify;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    line-height: 1rem;
+}
+
+.home__subdetail-starplayer-name {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    font-weight:bold;
+}
+
+.home__subdetail-starplayer-amount {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1vh 0;
 }
 
 /*ADMIN*/
@@ -156,7 +222,7 @@ strong {
 }
 
 .img-admin {
-    height: 8vh;
+    height: 6vh;
     margin: auto auto;
 }
 
@@ -224,6 +290,8 @@ strong {
 }
 
 .admin__addform-button {
+    display: block;
+    margin : 0 auto;
     margin-top : 3vh;
     margin-bottom: 3vh;
     color: inherit;
@@ -237,6 +305,7 @@ strong {
     background-color: rgb(239, 248, 244);
     box-shadow: 5px 3px 0 yellow;
     padding: 1rem 2rem;
+    
     
 }
 
@@ -384,3 +453,146 @@ strong {
     padding: 2vh 0;
     text-align: center;
 }
+
+.playerranking__row {
+    margin : 1vh 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgb(178, 171, 171);
+}
+
+.playerranking__top-container {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.playerranking__top {
+    padding:1vh 0.5vh;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.playerranking__top-text {
+    padding: 0.4vh 0.5vh;
+    background-color: rgb(118, 186, 153);
+    color: white;
+    border-radius: 20%;
+}
+
+.playerranking__top-crown {
+    height: 3vh;
+    width: auto;
+    padding-left: 1vh;
+}
+
+.playerranking__player {
+    width: 40%;
+    padding: 2vh 0;
+    padding:1vh 2vh;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.playerranking__amount {
+    width: 35%;
+    padding: 2vh 0;
+    padding:1vh 2vh;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+/*ADMIN - SETTINGS*/
+
+.admin__settings-obj-input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 90vw;
+    background-color: rgba(252, 248, 248, 0.97);
+    
+}
+
+/* STATS */
+
+.stats__piechart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px;
+    margin: 2.5vh auto;
+}
+
+.stats__piechart{
+    max-width: 500px;
+    max-height: 500px;
+    width: 80vw;
+    height: 80vw;
+    border-radius: 50%;
+    background-color: var(--color4);
+    background: conic-gradient( 
+     red 6deg, orange 6deg 18deg, yellow 18deg 45deg, 
+     green 45deg 110deg, blue 110deg 200deg, purple 200deg);
+}
+
+.stats__piechart-descr {
+    font-size: 2vh;
+    margin-top: 4vh;
+}
+
+.stats__piechart-descr h1{
+    font-size: 2vh;
+    text-transform: uppercase;
+    margin-bottom: 1.5vh;
+}
+
+.stats__piechart-table {
+    border-spacing: 1.5rem;
+    border-collapse: separate; 
+}
+
+.stats__piechart-title {
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.stats__piechart-amount {
+    padding : 0.5vh 0.7vh;
+    background-color: brown;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.stats__perchart-label {
+    display: inline;
+    padding : 0.5vh 0.7vh;
+    background-color: brown;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    max-width: 50vw;
+    line-height: 2rem;
+    font-size: 0.9rem;
+}
+
+.stats__piechart-row {
+    border-bottom: 1px solid rgba(206, 198, 198, 0.919);
+}
+
+.check {
+    display: inline;
+}
+

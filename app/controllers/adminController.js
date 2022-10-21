@@ -27,8 +27,6 @@ const adminController = {
       res.redirect(`/setpenalty`);
     },
 
-
-
     async setRegister (req,res) {
       const players = await dataMapper.findPlayers();
       const penalties = await dataMapper.findPenalties();
@@ -41,6 +39,20 @@ const adminController = {
       const registerID = parseInt(req.params.id);
       const deletedRegister = await dataMapper.deleteRegister(registerID);
       res.redirect(`/setregister`);
+    },
+
+    async setPayment (req,res) {
+      const registers = await dataMapper.findRegistersNotPaid();
+      res.render("setPayment", { registers})
+
+    },
+
+    async settings (req,res) {
+      const settings = await dataMapper.findSettings();
+      console.log("CHECK")
+      console.log(settings)
+      res.render("settings", { settings });
+
     },
   
     async addPlayerAndRedirect (req, res) {
@@ -76,7 +88,42 @@ const adminController = {
       // Option 1 : l'ID de la promo, je la connais, elle est où ?
       res.redirect(`/setregister`);
 
+    },
+    async addPaymentAndRedirect (req,res) {
+      const register = req.body;
+      
+      //These lines put the ID of the ticked register in an array
+      registerID = []
+      values = Object.entries(register)
+      for(value of values) {
+        registerID.push(value[0])
+      }
+      
+      //These line put the value of the array into a string in order to fit with SQL synthax requirement.
+      registerIDforSQL = ""
+      for(value in registerID) {
+        if(value != (registerID.length -1)) {
+        registerIDforSQL =  registerIDforSQL + `${registerID[value]}, `
+        } else {
+          registerIDforSQL =  registerIDforSQL + `${registerID[value]}`
+        }
+      }
+      
+      const settlePayment = await dataMapper.settlePaymentAndRedirect(registerIDforSQL); // On va créer une fonction dans le DATAMAPPER qui a partir d'information sur un étudiant l'insère en BDD
+      res.redirect(`/setpayment`);
+    }, 
+    async addSettingsAndRedirect (req,res) {
+      let setting = req.body;
+      
+      //This line manage cases where apostrophes are enterer by the user. Apsotrophe need to be transformed by double apostrophe in order to be read.
+      setting.target = setting.target.replace(/'/g, "''");
+      const insertSetting = await dataMapper.insertSettings(setting);
+
+      res.redirect(`/settings`);
+
     }
+
+    
   };
 
 module.exports = adminController;
