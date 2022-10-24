@@ -1,0 +1,19 @@
+<%- include("partials/headers") %>
+<script src="checkout.js" defer></script>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">Paiement des amendes</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
+
+    <section>
+        <div class="checkout2__info-container">
+            <div>Le montant d'amendes à payer pour <strong><%=playerAmountDue.player_pseudo%></strong> est de <strong><%=playerAmountDue.sum%>€</strong></div>
+        </div>
+        <div></div>
+    </section>
+
+    <button class="checkout__pay-button">Payer</button>
+
+    <p>FOOT BUSINESS : Le montant a payé représente 0.0000055% du transfer de Kylian Mbappé au PSG</p>  

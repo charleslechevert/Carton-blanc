@@ -18,8 +18,9 @@
 }
 
 .home__main {
-    background-color: white;
+    background-color: #FAFAFA;
     min-height: 100vh;
+    min-width: 100vw;
     line-height:1.2rem;
     max-width: 800px;
     margin: 0 auto;
@@ -37,6 +38,8 @@ strong {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 1.5vh 0;
+    
 }
 
 .title__logo {
@@ -45,11 +48,14 @@ strong {
 }
 
 .title__text {
+    display: inline;
     font-size: 2.5vh;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 0 1rem;
-    max-width: 60%;
+    margin: 1vh 2vh;
+    padding: 1vh 0;
+    max-width: 90%;
+    border-bottom: 4px solid yellow;
 
 }
 
@@ -84,6 +90,12 @@ strong {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 5px 3px 0 yellow;
+    margin-bottom: 4vh;
+    background-color: white;
+    padding : 1vh;
 
 }
 
@@ -91,6 +103,7 @@ strong {
     height: 4vh;
     width: auto;
     padding-right: 3vh;
+    padding-left: 1.5vh;
 }
 
 .home__sentence-text {
@@ -118,18 +131,26 @@ strong {
     justify-content: center;
     align-items: center;
     width: 40%;
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    border-top: 3px solid yellow;
+    background-color: white;
+    padding: 1.5vh;
 }
 
 .home__box-resume-amount {
     text-align: center;
     text-transform: uppercase;
     font-weight: bolder;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    padding: 1.5vh 1.5vh;
 }
 
 .home__box-resume-descr {
-    text-align: center;
+    
     text-transform: uppercase;
+    padding-bottom: 1vh;
+    color : rgb(75, 75, 75);
 }
 
 .homme__visual {
@@ -147,7 +168,7 @@ strong {
 .home__visual-filter {
     
     filter: brightness(50%);
-    height:18vh;
+    height:16vh;
     width: auto;
     
     
@@ -172,10 +193,22 @@ strong {
     flex-direction: row;
     justify-content: space-around;
     align-items:flex-start;
+    max-width: 800px;
+    margin: 1vh auto;
 }
 
 .home__subdetail-container {
     width: 40%;
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    border-top: 3px solid yellow;
+    background-color: white;
+    padding: 1.5vh;
+    min-height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .home__subdetail-title {
@@ -184,27 +217,57 @@ strong {
     text-align: center;
     margin: 1.5vh 0;
     line-height: 1rem;
+    
+}
+
+.home__subdetail-container2 {
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    border-top: 3px solid yellow;
+    background-color: rgb(42, 42, 42);
+    padding: 1.5vh;
+    min-height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__subdetail-title2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.5vh 0;
+    line-height: 1rem;
+    color: white;
+    
 }
 
 .home__subdetail-text {
-    text-align: justify;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+
+    font-size: 1rem;
     line-height: 1rem;
+    color : rgb(75, 75, 75);
 }
 
 .home__subdetail-starplayer-name {
     text-transform: uppercase;
     text-align: center;
-    font-size: 1rem;
+    font-weight: bolder;
+    font-size: 1.4rem;
     font-weight:bold;
+    color : white;
+    padding:1vh 0;
 }
 
 .home__subdetail-starplayer-amount {
     text-transform: uppercase;
     text-align: center;
-    font-size: 2rem;
+    font-weight: bolder;
+    font-size: 1.8rem;
     padding: 1vh 0;
+    color:white;
 }
 
 /*ADMIN*/
@@ -214,10 +277,12 @@ strong {
     max-width: 800px;
     margin : 2vh auto;
     padding: 1vh;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px 0 slategrey;
     display: flex;
     flex-direction: row;
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    border-top: 3px solid yellow;
+    background-color: white;
     
 }
 
@@ -305,7 +370,102 @@ strong {
     background-color: rgb(239, 248, 244);
     box-shadow: 5px 3px 0 yellow;
     padding: 1rem 2rem;
+     
+}
+
+.admin__form-subcontainer {
+    position: relative;
+    width: 40vw;
+}
+
+.admin_add-input--validation-logo {
+    visibility: hidden;
+    width : 2.2vh;
+    position:absolute;
+    top : 32px;
+    right: 10px;
     
+}
+
+.admin_add-input--error-logo {
+    visibility: hidden;
+    height : 2vh;
+    position:absolute;
+    top : 32px;
+    right: 10px;
+    
+}
+
+.admin__form-subcontainer small {
+    visibility: hidden;
+    text-align: left;
+    display: block;
+    padding: 1vh 0;
+    font-size:0.8rem;
+    width: 100%;
+}
+
+.admin__form-subcontainer.success input {
+    border-color : rgb(76, 184, 94)
+}
+
+.admin__form-subcontainer.error input {
+    border-color : darkred;
+}
+
+.admin__form-subcontainer.success img.admin_add-input--validation-logo {
+   visibility: visible;
+}
+
+.admin__form-subcontainer.error img.admin_add-input--error-logo {
+    visibility: visible;
+ }
+
+ .admin__form-subcontainer.error small {
+    visibility: visible;
+    width: 100%;
+    color: darkred;
+ }
+
+/*ADMIN -- popup*/
+
+.admin__popup {
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.admin__popup-container2 {
+    width: 60%;
+    margin: 3vh auto;
+    
+}
+
+.admin__popup-container{
+    height: 40vh;
+    width: 70vw;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin__popup-input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
     
 }
 
@@ -316,8 +476,7 @@ strong {
     color:black;
     text-transform: uppercase;
     text-align: left;
-    padding-top: 2vh;
-    padding-bottom: 1vh;
+    padding: 1vh 0;
     font-weight: bold;
     
 }
@@ -406,7 +565,7 @@ strong {
 }
 
 .penaltylist__row {
-    border-bottom: 1px solid grey;
+    border-bottom: 0.8px solid grey;
 }
 
 .penaltylist__amount {
@@ -457,7 +616,7 @@ strong {
 .playerranking__row {
     margin : 1vh 0;
     text-transform: uppercase;
-    border-bottom: 1px solid rgb(178, 171, 171);
+    border-bottom: 0.8px solid rgb(178, 171, 171);
 }
 
 .playerranking__top-container {
@@ -594,5 +753,37 @@ strong {
 
 .check {
     display: inline;
+}
+
+
+/* CHECKOUT2 */
+
+.checkout2__info-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    max-width: 800px;
+    width: 75vw;
+    margin : 3vh auto;
+    text-transform: uppercase;
+}
+
+.checkout__pay-button {
+    display: block;
+    margin : 0 auto;
+    margin-top : 3vh;
+    margin-bottom: 3vh;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: rgb(239, 248, 244);
+    box-shadow: 5px 3px 0 yellow;
+    padding: 1rem 2rem;
 }
 

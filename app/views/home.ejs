@@ -13,9 +13,9 @@
         <div class="home__box-resume">
             <div class="home__box-resume-split">
                 <h2 class="home__box-resume-amount" id="totalPenalties"><%=sumPenalties.sum %>€</h2>
-                <h3 class="home__box-resume-descr">Total des amendes distribués</h3>
+                <h3 class="home__box-resume-descr">Total des amendes <br> distribués</h3>
             </div>
-            <div>
+            <div class="home__box-resume-split">
                 <% if(sumPenaltiesPaid.sum) { %>
                 <h2 class="home__box-resume-amount" id="totalPenaltiesPaid"><%=sumPenaltiesPaid.sum %>€</h2>
                 <% } else { %>
@@ -38,8 +38,8 @@
             <h3 class="home__subdetail-title">Objectif de la cagnotte</h3>
             <p class="home__subdetail-text"><%= settings.data %></p>
         </div>
-        <div class="home__subdetail-container">
-            <h3 class="home__subdetail-title">La star de la saison</h3>
+        <div class="home__subdetail-container2">
+            <h3 class="home__subdetail-title2">La star de la saison</h3>
             <p class="home__subdetail-starplayer-name"><%= starPlayer.player_pseudo %></p>
             <p class="home__subdetail-starplayer-amount"><%= starPlayer.sum %>€</p>
 

@@ -29,15 +29,12 @@ router.get("/setpayment", adminController.setPayment);
 router.get("/settings", adminController.settings);
 
 
-
-
-
 router.post("/add-player", adminController.addPlayerAndRedirect);
 router.post("/add-penalty", adminController.addPenaltyAndRedirect);
 router.post("/add-register", adminController.addRegisterAndRedirect);
 router.post("/add-settlement", adminController.addPaymentAndRedirect);
 router.post("/add-settings", adminController.addSettingsAndRedirect);
 
-
+router.post("/checkout2", homeController.addCheckout);
 
 module.exports = router;

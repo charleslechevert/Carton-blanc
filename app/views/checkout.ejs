@@ -1,4 +1,5 @@
 <%- include("partials/headers") %>
+<script src="checkout.js" defer></script>
 
 
 <main class="main">
@@ -7,7 +8,23 @@
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
 
-<div class="">Payer</div>
+    <div class="formcontainer-addplayer">
+    <form class="form-addplayer" method="POST" action="/checkout2">
+    
+        <label class="label-addplayer" for="player">Joueur</label>
+        <select class="input-addplayer" name="pseudo_player" id="pseudo_player">
+            <% for(player of players) { %>
+            <option value="<%= player.pseudo %>"><%= player.pseudo %></option>
+            <% } %>
+        </select>
+        
+        
+        <input class="admin__addform-button"type="submit" value="Valider">
+    
+    </form>
+    </div>
+
+
 
 </main>
     

@@ -1,29 +1,42 @@
 <%- include("partials/headers") %>
+<script src="setplayer.js" defer></script>
 
 <div class="page-title">Ajoute un joueur</div>
 
 <div class="formcontainer-addplayer">
 <form class="form-addplayer" method="POST" action="/add-player">
     <div class="admin__container-add-items">
-        <div>
+        <div class="admin__form-subcontainer">
             <label class="label-addplayer" for="fname">Prénom</label>
             <input class="input-addplayer" type="text" id="fname" name="fname" placeholder="Johan">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+			<img class="admin_add-input--error-logo" src="error.png">
+			<small>Error message</small>
         </div>
-        <div>
+        <div class="admin__form-subcontainer">
             <label class="label-addplayer" for="lname">Nom</label>
             <input class="input-addplayer" type="text" id="lname" name="lname" placeholder="Micoud">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+			<img class="admin_add-input--error-logo" src="error.png">
+			<small>Error message</small>
         </div>
-        <div>
+        <div class="admin__form-subcontainer">
             <label class="label-addplayer" for="pseudo">Pseudo</label>
             <input class="input-addplayer" type="text" id="pseudo" name="pseudo" placeholder="Le nouveau Zidane">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+			<img class="admin_add-input--error-logo" src="error.png">
+			<small>Error message</small>
         </div>
-        <div>
+        <div class="admin__form-subcontainer">
             <label class="label-addplayer" for="email">email</label>
             <input class="input-addplayer" type="text" id="email" name="email" placeholder="yomicoud@werder.com">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+			<img class="admin_add-input--error-logo" src="error.png">
+			<small>Error message</small>
         </div>
     </div>
     
-    <input class="admin__addform-button"type="submit" value="Valider">
+    <button class="admin__addform-button">Valider</button>
 
 </form>
 
@@ -46,7 +59,7 @@
                 <p><%= player.lname %></p>
             </td>
 
-            <td class="admin__cell-form">
+            <td class="admin__cell-form admin__pseudo">
                 <p><%= player.pseudo%></p>
             </td>
                 

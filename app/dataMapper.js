@@ -152,6 +152,14 @@ async function insertOnePlayer(player) { // Note, on peut aussi destructuré au 
       console.log(result.rows);
     return result.rows;
   }
+
+  async function findPlayerAmountDue(name) {
+    const result = await db.query(
+      `SELECT player_pseudo, sum(penalty_amount) FROM register WHERE player_pseudo='${name}' AND paid_status='false' GROUP BY player_pseudo;`)
+      console.log(result);
+    return result.rows[0];
+
+  }
   
 
 module.exports = {
@@ -172,5 +180,6 @@ module.exports = {
     starPlayer, 
     insertSettings,
     findSettings,
-    statByType
+    statByType,
+    findPlayerAmountDue
 };

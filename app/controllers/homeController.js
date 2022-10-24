@@ -31,11 +31,23 @@ async registerList (req,res) {
         res.render("stats", { statsByType })
     },
     async checkout (req,res) {
-        res.render("checkout")
+        const players = await dataMapper.findPlayers();
+        res.render("checkout", { players })
+    },
+
+    async addCheckout (req,res) {
+        const checkout = req.body;
+        console.log('CHECK')
+        console.log(checkout.pseudo_player)
+        const playerAmountDue = await dataMapper.findPlayerAmountDue(checkout.pseudo_player);
+        res.render("checkout2", { playerAmountDue })
+    },
+    async connect (req,res) {
+        res.render("connect")
     }
 
-};
 
+};
 
 
 
