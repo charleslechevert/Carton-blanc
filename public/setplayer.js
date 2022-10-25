@@ -90,5 +90,6 @@ function pseudos() {
     for(const pseudo of pseudos) {
         pseudosArray.push(pseudo.innerText)
     }
+    console.log(pseudosArray)
     return pseudosArray;
 }

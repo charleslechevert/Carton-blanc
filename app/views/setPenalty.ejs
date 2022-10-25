@@ -12,6 +12,8 @@
         <option value="<%=typeOption%>"><%=typeOption%></option>
         <% } %>
       </select>
+			<small></small>
+
     </div>
     <div class="admin__container-addpenalty">
       <label class="label-addplayer" for="amount">Montant</label>
@@ -37,7 +39,7 @@
           <% for(penalty of penalties) { %>
           <tr class="admin__row-form">
               <td class="admin__cell-form">
-                  <p><%= penalty.type %></p>
+                  <p class="admin__penaltyType"><%= penalty.type %></p>
               </td>
   
               <td class="admin__cell-form">

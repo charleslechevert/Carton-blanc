@@ -327,7 +327,7 @@ strong {
 
 .admin__row-form {
     text-transform: uppercase;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 0.8px solid lightgrey;
     margin: 2rem;
     font-weight: bold;
 }
@@ -478,6 +478,7 @@ strong {
     text-align: left;
     padding: 1vh 0;
     font-weight: bold;
+    background-color: #FAFAFA;
     
 }
 
@@ -486,6 +487,7 @@ strong {
     border: none;
     border-bottom: 1px solid black;
     width: 40vw;
+    background-color: #FAFAFA;
     
 }
 
