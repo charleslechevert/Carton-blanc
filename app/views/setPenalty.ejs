@@ -1,4 +1,5 @@
 <%- include("partials/headers") %>
+<script src="setPenalty.js" defer></script>
 
 <div class="page-title">Fixe les règles</div>
 
@@ -15,8 +16,12 @@
     <div class="admin__container-addpenalty">
       <label class="label-addplayer" for="amount">Montant</label>
       <input class="input-addplayer" type="text" id="amount" name="amount" placeholder="Renseigne un nombre">
+      <img class="admin_add-input--validation-logo" src="paid.png">
+			<img class="admin_add-input--error-logo" src="error.png">
+			<small></small>
     </div>
-    <input class="admin__addform-button"type="submit" value="Valider">
+    <button class="admin__addform-button">Valider</button>
+
    
    </form>
    </div>
