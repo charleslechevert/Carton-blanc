@@ -6,6 +6,7 @@
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
 
+<% if (sumPlayers.length > 0) { %>
 <section>
     <table class="penaltylist__container">
         <thead class="penaltylist__header">
@@ -26,10 +27,15 @@
                         <img class="playerranking__top-crown" src="crown3.png" alt="">
                         <% } %>
                 </td>
-                <td class="playerranking__player"><%= sumPlayers[sumPlayer].player_pseudo %></td>
+                <td class="playerranking__player"><%= sumPlayers[sumPlayer].pseudo %></td>
                 <td class="playerranking__amount"><%= sumPlayers[sumPlayer].sum %>€</td>
             </tr>
             <% } %>
         </tbody>
     </table>
 </section>
+
+<% } else { %>
+    <p class="general__noPenalties-message">Aucune amende n'ont été distribuée!</p>
+
+<% } %>

@@ -7,10 +7,10 @@
     </div>
 
     <div class="formcontainer-addplayer">
-        <form class="form-addplayer" method="POST" action="/add-settings" autocomplete="on">
+        <form class="form-addplayer" method="POST" action="/setTeam" autocomplete="on">
                 <div>
                     <label class="label-addplayer" for="fname">Objectif de la cagnotte</label>
-                    <textarea cols="40" rows="3" class="admin__settings-obj-input" type="text" id="target" name="target" placeholder="Aller voir un match de l'EAG avec les jeunes et acheter une tireuse à bières pour le foyer."><%=settings.data%></textarea>
+                    <textarea cols="40" rows="3" class="admin__settings-obj-input" type="text" id="target" name="target" placeholder="Aller voir un match de l'EAG avec les jeunes et acheter une tireuse à bières pour le foyer."><%=team[0].target%></textarea>
                 </div>
             <input class="admin__addform-button"type="submit" value="Valider">
         

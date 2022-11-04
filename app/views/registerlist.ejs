@@ -6,7 +6,7 @@
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
 
-
+<% if(registers.length > 0) { %>
 <section >
     <table class="penaltylist__container">
         <thead class="penaltylist__header">
@@ -20,13 +20,13 @@
             <% for(register of registers) { %>
             <tr class="penaltylist__row">
                 <td class="registerlist__date">
-                    <p><%= `${register.date.getDate()}-${register.date.getMonth()}-${register.date.getFullYear()} `%></p>
+                    <p><%= `${register.date.getDate()}-${register.date.getMonth()+1}-${register.date.getFullYear()} `%></p>
                 </td>
                 <td class="registerlist__joueur">
-                    <p><%=register.player_pseudo%></p>
+                    <p><%=register.pseudo%></p>
                 </td>
                 <td class="registerlist__raison">
-                    <p><%=register.penalty_type%></p>
+                    <p><%=register.type%></p>
                 </td>
                 <td class="registerlist__paid">
                     <% if(register.paid_status) { %>
@@ -41,6 +41,11 @@
         </tbody>
     </table>
 </section>
+
+<% } else { %>
+    <p class="general__noPenalties-message">Aucune amende n'ont été distribuée!</p>
+
+<% } %>
 
 
 </main>

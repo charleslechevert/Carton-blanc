@@ -6,47 +6,52 @@
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
 
-    <form method="POST" action="/add-settlement">
-        <button class="admin__addform-button" type="submit">Valider</button>
-    <table class="admin__form">
-        <thead>
-            <th class="admin___headerform-text"> Date</th>
-            <th class="admin___headerform-text"> Jouer </th>
-            <th class="admin___headerform-text"> Raison</th>
-            <th class="admin___headerform-text"> Payé?</th>
-            <th class="admin___headerform-text"> Régler</th>
-        </thead>
-        <tbody>
-            <% for(register of registers) { %>
-            <tr class="admin__row-form">
-                <td class="admin__cell-form">
-                    <p><%= `${register.date.getDate()} - ${register.date.getMonth()} - ${register.date.getFullYear()} `%></p>
-                </td>
-                <td class="admin__cell-form">
-                    <p><%= register.player_pseudo %></p>
-                </td>
-                <td class="admin__cell-form">
-                    <p><%= register.penalty_type %></p>
-                </td>
-    
-                <td class="admin__cell-form">
-                    <% if(register.paid_status) { %>
-                        <img class="registerlist__form-paidlogo" src="paid.png" alt="">
-                    <% } else { %>
-                        <img class="registerlist__form-paidlogo" src="notpaid.png" alt="">
-                    <% } %>
-                </td>
-                <td class="admin__cell-form admin cell-form__modifier-container">
-                    <input type="checkbox" id="<%= register.id %>" name="<%= register.id %>">
-                </td>
-                
-            </tr>
-            <% } %>
-        </tbody>
+    <% if(registers.length >0) { %>
+        <form method="POST" action="/setPayment">
+            <button class="admin__addform-button" type="submit">Valider</button>
+        <table class="admin__form">
+            <thead>
+                <th class="admin___headerform-text"> Date</th>
+                <th class="admin___headerform-text"> Jouer </th>
+                <th class="admin___headerform-text"> Raison</th>
+                <th class="admin___headerform-text"> Payé?</th>
+                <th class="admin___headerform-text"> Régler</th>
+            </thead>
+            <tbody>
+                <% for(register of registers) { %>
+                <tr class="admin__row-form">
+                    <td class="admin__cell-form">
+                        <p><%= `${register.date.getDate()} - ${register.date.getMonth()+1} - ${register.date.getFullYear()} `%></p>
+                    </td>
+                    <td class="admin__cell-form">
+                        <p><%= register.player.pseudo %></p>
+                    </td>
+                    <td class="admin__cell-form">
+                        <p><%= register.penalty.type %></p>
+                    </td>
+        
+                    <td class="admin__cell-form">
+                        <% if(register.paid_status) { %>
+                            <img class="registerlist__form-paidlogo" src="paid.png" alt="">
+                        <% } else { %>
+                            <img class="registerlist__form-paidlogo" src="notpaid.png" alt="">
+                        <% } %>
+                    </td>
+                    <td class="admin__cell-form admin cell-form__modifier-container">
+                        <input type="checkbox" id="<%= register.id %>" name="<%= register.id %>">
+                    </td>
+                    
+                </tr>
+                <% } %>
+            </tbody>
+            </table>
+        </form>
+        
         </table>
-    </form>
-    
-    </table>
+        <% } else { %>
+            <p class="general__noPenalties-message">Pas d'amendes à payer!</p>
+        <% } %>
+        </main>
     
         
     </body>

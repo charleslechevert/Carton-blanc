@@ -1,0 +1,26 @@
+<%- include("partials/headers") %>
+
+<main>
+   <div>
+      <div class="title__container">
+         <p class="title__text">Se connecter en tant qu'admin</p>
+         <img class="title__logo" src="logoclub.png" alt="">
+      </div>
+
+      <section class="adminSignin__container">
+         <form action="/adminSignin" method="POST">
+            <label for="password" class="label-addplayer">Mot de passe</label>
+            <input type="password" class="input-addplayer" name="password" id="password">
+            <% if(errorMessage) { %>
+               <p class="adminSignin__error"><%= errorMessage %></p>
+            <% } %>
+            <button class="admin__addform-button">Valider</button>
+         </form>
+         <img src="admin.png" class="adminSignin__logo" alt="">
+      </section>
+
+      </main>
+
+    
+</body>
+</html>

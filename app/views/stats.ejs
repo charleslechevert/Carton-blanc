@@ -8,7 +8,7 @@
     </div>
 
     
-
+    <% if(statsByType.length > 0) { %>
     <section class="stats__piechart-container">
         <div class="stats__piechart"></div>
         <div class="stats__piechart-descr">
@@ -17,8 +17,8 @@
                 <tbody >
                     <% for(statByType of statsByType) { %>
                     <tr class="stats__piechart-row">
-                        <td class="stats__perchart-label"><%= statByType.penalty_type %></td>
-                        <td class="stats__piechart-amount"><%= statByType.sum %></td>
+                        <td class="stats__perchart-label"><%= statByType.type %></td>
+                        <td class="stats__piechart-amount"><%= statByType.sum %>€</td>
                     </tr>
                     <% } %>
                 </tbody>
@@ -26,6 +26,9 @@
         </div>
         
     </section>
+    <% } else { %>
+        <p class="general__noPenalties-message">Aucune amende n'ont été distribuée!</p>
+    <% } %>
 
     </main>
 

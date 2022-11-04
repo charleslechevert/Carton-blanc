@@ -1,10 +1,13 @@
 <%- include("partials/headers") %>
 <script src="setplayer.js" defer></script>
 
+
+
+
 <div class="page-title">Ajoute un joueur</div>
 
 <div class="formcontainer-addplayer">
-<form class="form-addplayer" method="POST" action="/add-player">
+<form class="form-addplayer" method="POST" action="/setPlayer">
     <div class="admin__container-add-items">
         <div class="admin__form-subcontainer">
             <label class="label-addplayer" for="fname">Prénom</label>
@@ -49,30 +52,33 @@
         <th class="admin___headerform-text"> Modifier</th>
     </thead>
     <tbody>
-        <% for(player of players) { %>
+        <script src="popup.js" defer></script>
+        <% for(item of players) { %>
+        <%- include("partials/popup",{name: "player"}) %>
+        <% const name = "player" %>
         <tr class="admin__row-form">
             <td class="admin__cell-form">
-                <p><%= player.fname %></p>
+                <p><%= item.fname %></p>
             </td>
 
             <td class="admin__cell-form">
-                <p><%= player.lname %></p>
+                <p><%= item.lname %></p>
             </td>
 
             <td class="admin__cell-form admin__pseudo">
-                <p><%= player.pseudo%></p>
+                <p><%= item.pseudo%></p>
             </td>
                 
             <td class="admin__cell-form">
-                <p><%- player.email.replace(/@/g,"<br>@")%></p>
+                <p><%- item.email.replace(/@/g,"<br>@")%></p>
             </td>
             <td class="admin__cell-form admin cell-form__modifier-container">
                 <button class="admin__cell-form__button">
                     <img class="admin__cell-form__img" src="modify.png" alt="">
                 </button>
-                <a href="/setplayer/delete/<%= player.id %>" class="admin__cell-form__button">
+                <button class="admin__cell-form__button" id="popup__openButton">
                     <img class="admin__cell-form__img" src="delete.png" alt="">
-                </a>
+                </button>
             </td>
         </tr>
         <% } %>

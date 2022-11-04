@@ -1,11 +1,20 @@
 :root {
-    --color1: rgb(118, 186, 153);
+    --color1: rgb(62, 83, 71);
     --color2: rgb(173, 207, 159);
     --color3: rgb(206, 216, 158);
     --color4: rgb(255, 220, 174);
   }
 
   /*GENERAL*/
+
+ main {
+    margin-top: 10vh;
+ }
+
+  .main {
+    max-width: 800px;
+    margin: 10vh auto;
+  }
 
   .page-title {
     font-size: 1.4rem;
@@ -24,10 +33,18 @@
     line-height:1.2rem;
     max-width: 800px;
     margin: 0 auto;
+    margin-top:10vh;
 }
 
 strong {
     font-weight: bold;
+}
+
+.general__noPenalties-message {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 4vh 0;
 }
 
 /* TITLE */
@@ -45,6 +62,7 @@ strong {
 .title__logo {
     max-height: 80%;
     max-width: 80%;
+    margin: 1vh 2vh;
 }
 
 .title__text {
@@ -61,6 +79,35 @@ strong {
 
 
 /*HOME*/
+
+.home__sectionTitle {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2vh;
+    
+
+}
+
+.home__sectionLogo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 20%
+}
+.home__sectionLogo {
+    height: 4vh;
+
+}
+
+.home__sectionText {
+    width : 75%;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1vh 0;
+    margin: 2vh 0;
+    border-bottom: 0.8px solid lightslategray;
+    
+}
 
 .container-credit {
     position: relative;
@@ -92,10 +139,12 @@ strong {
     align-items: center;
     width: 60%;
     margin: 0 auto;
-    box-shadow: 5px 3px 0 yellow;
-    margin-bottom: 4vh;
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    border-top: 3px solid yellow;
     background-color: white;
-    padding : 1vh;
+    padding: 1.5vh;
+    background-color: white;
 
 }
 
@@ -163,7 +212,7 @@ strong {
 
 .home__visual-wrapper {
     position: relative;
-    display: inline-block
+    display: inline-block;
 }
 
 .home__visual-filter {
@@ -193,7 +242,7 @@ strong {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items:center;
+    align-items:stretch;
     max-width: 800px;
     margin: 1vh auto;
 }
@@ -224,11 +273,12 @@ strong {
     width: 40%;
     border-radius: 5px;
     box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    background-color: white;
     border-top: 3px solid yellow;
-    background-color: rgb(42, 42, 42);
+
     padding: 1.5vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -239,7 +289,7 @@ strong {
     text-align: center;
     margin: 1.5vh 0;
     line-height: 1rem;
-    color: white;
+    
     
 }
 
@@ -250,13 +300,34 @@ strong {
     color : rgb(75, 75, 75);
 }
 
+.home__subdetail-starplayer-title-container {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.home__subdetail-starplayer-data-container {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__subdetail-starplayer-letter {
+    height: 3vh;
+    margin: 0.7vh 0;
+}
+
 .home__subdetail-starplayer-name {
     text-transform: uppercase;
     text-align: center;
     font-weight: bolder;
     font-size: 1.4rem;
     font-weight:bold;
-    color : white;
     padding:1vh 0;
 }
 
@@ -266,8 +337,82 @@ strong {
     font-weight: bolder;
     font-size: 1.8rem;
     padding: 1vh 0;
-    color:white;
 }
+
+.home__subdetail-starplayer-null {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 1vh 0;
+
+}
+
+.home__progressbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.home__prgressbar-overwrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3vh 0;
+}
+
+.home__progressbar-wrapper {
+    width: 90%;
+    max-width: 730px;
+    position: relative;
+    display: block;
+    
+}
+
+.home__progressbar-total {
+
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(218, 218, 218);
+    max-width: 730px;
+    margin: 0 auto;
+    border-radius: 4px;
+    position: absolute;
+    
+    
+}
+
+.home__progressbar-completed {
+
+    width: 100%;
+    height: 5vh;
+    background-color: var(--color1);
+    max-width: 730px;
+    margin: 0 auto;
+    border-radius: 4px;
+    position: absolute;
+    left:0;
+    z-index:10
+    
+}
+
+.home__progressbar-descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home__progressbar-percentage {
+    text-align: right;
+    width: 90%;
+    max-width: 730px;
+    margin : 0vh auto;
+    margin-top: 3vh;
+    font-weight: bold;
+}
+
+
 
 /*ADMIN*/
 
@@ -321,6 +466,7 @@ strong {
     font-size: 0.7rem;
     font-weight: bold;
     text-align: center;
+    padding: 0 0.5vh;
     
 } 
 
@@ -426,47 +572,24 @@ strong {
     color: darkred;
  }
 
-/*ADMIN -- popup*/
+/* ADMIN -- SIGNIN */
 
-.admin__popup {
-    background: rgba(0,0,0,0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.admin__popup-container2 {
-    width: 60%;
-    margin: 3vh auto;
-    
-}
-
-.admin__popup-container{
-    height: 40vh;
-    width: 70vw;
-    background-color: white;
-    border-radius: 5px;
-    position: relative;
-    max-width: 500px;
-    margin: 0 auto;
+ .adminSignin__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+ }
 
-.admin__popup-input {
-    display: block;
-    border: none;
-    border-bottom: 1px solid black;
-    width: 100%;
-    
-}
+ .adminSignin__logo {
+    height: 8vh;
+    margin: 4vh;
+ }
+
+ .adminSignin__error {
+    margin: 2vh 0;
+    color: darkred;
+ }
 
 /*ADMIN -- SETPLAYER*/
 
@@ -594,24 +717,31 @@ strong {
     width: 15%;
     padding: 2vh 0;
     text-align: center;
+    font-size: 0.8rem;
+    padding-right: 0.5vh;
 }
 
 .registerlist__joueur {
     width: 25%;
     padding: 2vh 0;
     text-align: center;
+    font-size: 0.8rem;
+    padding-right: 0.5vh;
 }
 
 .registerlist__raison {
     width: 45%;
     padding: 2vh 0;
     text-align: center;
+    font-size: 0.8rem;
+    padding-right: 0.5vh;
 }
 
 .registerlist__paid {
     width: 15%;
     padding: 2vh 0;
     text-align: center;
+    font-size: 0.8rem;  
 }
 
 .playerranking__row {
@@ -641,7 +771,7 @@ strong {
 }
 
 .playerranking__top-text {
-    padding: 0.4vh 0.5vh;
+    padding: 0.5vh 0.4vh;
     background-color: rgb(118, 186, 153);
     color: white;
     border-radius: 20%;
@@ -788,3 +918,77 @@ strong {
     padding: 1rem 2rem;
 }
 
+.popup__container {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+    z-index:10;
+    background-color: white;
+    max-width:600px;
+    width: 80%;
+    padding: 2vh;
+}
+
+.popup__container.popup__active {
+    transform: translate(-50%,-50%) scale(1);
+    
+}
+
+#popup__overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index:5;
+}
+
+#popup__overlay.popup__active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.popup__question {
+    margin: 0 2vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.popup__buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.popup__cancelButton {
+    border-radius: 5px;
+    color: var(--color1);
+    background-color: white;
+    border: 2px solid var(--color1);
+    text-transform: uppercase;
+    padding: 2vh 2vh;
+    font-weight: bolder;
+    font-size: 1rem;
+
+}
+
+.popup__okButton {
+    border-radius: 5px;
+    color:white;
+    background-color: var(--color1);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 2.3vh 2vh 1.7vh 2vh;
+    font-weight: bolder;
+    align-items: center;
+
+}

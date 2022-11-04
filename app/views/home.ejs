@@ -4,49 +4,94 @@
 <main class="home__main">
     <%- include("partials/title") %>
 
-    <section class="home__sentence-container">
-        <img class="home__sentence-logo" src="sentence.png" alt="">
-        <p class="home__sentence-text">La phrase de la semaine : <br><strong>"Ma montre est terminée..."</strong> Hugo Ekitike </p>
-    </section>
+
 
     <section class="home__box-container">
+        <div class = "home__sectionTitle">
+            <div class="home__sectionLogo-container">
+                <img class=" home__sectionLogo" src="flyingmoney.png">
+            </div>
+            <h2 class = "home__sectionText">Montant de la cagnotte </h2>
+        </div>
+        
         <div class="home__box-resume">
             <div class="home__box-resume-split">
-                <h2 class="home__box-resume-amount" id="totalPenalties"><%=sumPenalties.sum %>€</h2>
+                <% if(sumPenaltiesPaid[0].sum) { %>
+                <h2 class="home__box-resume-amount" id="totalPenalties"><%=sumPenalties[0].sum %>€</h2>
+                <% } else { %>
+                    <h2 class="home__box-resume-amount" id="totalPenaltiesPaid">0€</h2>
+                    <% } %>
+                
                 <h3 class="home__box-resume-descr">Total des amendes <br> distribués</h3>
             </div>
             <div class="home__box-resume-split">
-                <% if(sumPenaltiesPaid.sum) { %>
-                <h2 class="home__box-resume-amount" id="totalPenaltiesPaid"><%=sumPenaltiesPaid.sum %>€</h2>
+                <% if(sumPenaltiesPaid[0].sum) { %>
+                <h2 class="home__box-resume-amount" id="totalPenaltiesPaid"><%=sumPenaltiesPaid[0].sum %>€</h2>
                 <% } else { %>
-                <h2 class="home__box-resume-amount">0€</h2>
+                <h2 class="home__box-resume-amount" id="totalPenaltiesPaid">0€</h2>
                 <% } %>
                 <h3 class="home__box-resume-descr">Total des amendes <br> payées</h3>
             </div>
         </div>
-        <div class="homme__visual">
-            <div class="home__visual-wrapper">
-                <img class="home__visual-filter"src="moneystack.png" alt="">
-                <img class="home__visual-img"src="moneystack.png" alt="">
-                
+    </section>
+
+    <section class="home__progressbar">
+        <div class="home__prgressbar-overwrapper">
+            <div class="home__progressbar-wrapper">
+                <div class="home__progressbar-total"></div>
+                <div class="home__progressbar-completed"></div>
             </div>
         </div>
+        <div class="home__progressbar-percentage">Pourcentage payé : 0%</div>
     </section>
 
-    <section class="home__details-container">
-        <div class="home__subdetail-container">
-            <h3 class="home__subdetail-title">Objectif de la cagnotte</h3>
-            <p class="home__subdetail-text"><%= settings.data %></p>
-        </div>
-        <div class="home__subdetail-container2">
-            <h3 class="home__subdetail-title2">La star de la saison</h3>
-            <p class="home__subdetail-starplayer-name"><%= starPlayer.player_pseudo %></p>
-            <p class="home__subdetail-starplayer-amount"><%= starPlayer.sum %>€</p>
 
-            
+    <section class="home__box-container">
+        <div class = "home__sectionTitle">
+            <div class="home__sectionLogo-container">
+                <img class=" home__sectionLogo" src="info.png">
+            </div>
+            <h2 class = "home__sectionText">Informations </h2>
+        </div>
+        <div class="home__details-container">
+            <div class="home__subdetail-container">
+                <h3 class="home__subdetail-title">Objectif de la cagnotte</h3>
+                <p class="home__subdetail-text"><%= team[0].target %></p>
+            </div>
+            <div class="home__subdetail-container2">
+                <div class="home__subdetail-starplayer-title-container">
+                    <img src="crown.png" alt="crown" class="home__subdetail-starplayer-letter">
+                    <img src="v.png" alt="v" class="home__subdetail-starplayer-letter">
+                    <img src="p.png" alt="p" class="home__subdetail-starplayer-letter">
+
+                </div>
+                <div class="home__subdetail-starplayer-data-container">
+                    <% if(starPlayer.length == 1) { %>
+                    <p class="home__subdetail-starplayer-name"><%= starPlayer[0].pseudo %></p>
+                    <p class="home__subdetail-starplayer-amount"><%= starPlayer[0].sum %>€</p>
+                    <% } else { %>
+                        <p class="home__subdetail-starplayer-null">Aucun joueur n'a payé d'amendes</p>
+                    <% } %>
+                </div>
+            </div>
         </div>
 
     </section>
+
+    <section class="home__box-container">
+        <div class = "home__sectionTitle">
+            <div class="home__sectionLogo-container">
+                <img class=" home__sectionLogo" src="sentence.png">
+            </div>
+            <h2 class = "home__sectionText">La phrase de la semaine </h2>
+        </div>
+        <div class="home__sentence-container">
+            <p class="home__sentence-text"><strong>"Ma montre est terminée..."</strong> Hugo Ekitike </p>
+        </div>
+    </section>
+
+
+    
     
 </main>
     

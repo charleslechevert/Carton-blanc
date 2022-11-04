@@ -27,6 +27,10 @@ header {
     justify-content: space-around;
     align-items: center;
     width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    
 
     
 }
@@ -112,11 +116,11 @@ header {
     opacity:0;
     pointer-events: none;
     transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
     width: 60vw;
     display: flex;
     flex-direction:column;
-    z-index: 100;
+    z-index: 10000;
+    border-radius: 0 0 6px 0 ;
     
 }
 
@@ -130,10 +134,11 @@ header {
 .header__menu-dropdown-text {
     text-transform: uppercase;
     padding: 0vh 1vh;
-    margin:1.5vh 0;
+    margin:1.5vh 5vh;
     text-decoration: none;
     color: white;
-    border-left: 2px solid white;
+    padding-bottom:1vh;
+    border-bottom: 1px solid white;
 }
 
 

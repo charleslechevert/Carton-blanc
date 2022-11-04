@@ -7,7 +7,7 @@
     </div>
 
 <div class="formcontainer-addplayer">
-<form class="form-addplayer" method="POST" action="/add-register">
+<form class="form-addplayer" method="POST" action="/setRegister">
     
     <label class="label-addplayer" for="player">Joueur</label>
     <select class="input-addplayer" name="player" id="player">
@@ -36,33 +36,35 @@
         <th class="admin___headerform-text"> Modifier</th>
     </thead>
     <tbody>
-        <% for(register of registers) { %>
+        <script src="popup.js" defer></script>
+        <% for(item of registers) { %>
         <tr class="admin__row-form">
             <td class="admin__cell-form">
-                <p><%= `${register.date.getDate()} - ${register.date.getMonth()} - ${register.date.getFullYear()} `%></p>
+                <p><%= `${item.date.getDate()} - ${item.date.getMonth() + 1} - ${item.date.getFullYear()} `%></p>
             </td>
             <td class="admin__cell-form">
-                <p><%= register.player_pseudo %></p>
+                <p><%= item.player.pseudo %></p>
             </td>
             <td class="admin__cell-form">
-                <p><%= register.penalty_type %></p>
+                <p><%= item.penalty.type %></p>
             </td>
 
             <td class="admin__cell-form">
-                <% if(register.paid_status) { %>
+                <% if(item.paid_status) { %>
                     <img class="registerlist__form-paidlogo" src="paid.png" alt="">
                 <% } else { %>
                     <img class="registerlist__form-paidlogo" src="notpaid.png" alt="">
                 <% } %>
             </td>
-            <% if(!register.paid_status) { %>
+            <% if(!item.paid_status) { %>
+            <%- include("partials/popup",{name: "register"}) %>
             <td class="admin__cell-form admin cell-form__modifier-container">
                 <button class="admin__cell-form__button">
                     <img class="admin__cell-form__img" src="modify.png" alt="">
                 </button>
-                <a href="/setregister/delete/<%= register.id %>" class="admin__cell-form__button">
+                <button class="admin__cell-form__button" id="popup__openButton">
                     <img class="admin__cell-form__img" src="delete.png" alt="">
-                </a>
+                </button>
             </td>
             <% } %>
             

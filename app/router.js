@@ -1,40 +1,62 @@
 const express = require("express");
-const adminController = require("./controllers/adminController");
+const playerController = require("./controllers/playerController");
+const penaltyController = require("./controllers/penaltyController");
+const registerController = require("./controllers/registerController");
+const paymentController = require("./controllers/paymentController");
+const mainController = require("./controllers/mainController");
 const homeController = require("./controllers/homeController");
+const teamController = require("./controllers/teamController");
+const authController = require("./controllers/authController");
+const authMiddlewares = require("./middlewares/auth");
+
+
 
 const router = express.Router();
 
-router.get("/", homeController.home);
 
-router.get("/admin", (req,res) => {
+
+router.get("/admin",authMiddlewares.checkIsAdmin, (req,res) => {
     res.render("admin")
 });
 
-router.get("/stats", homeController.stats);
-router.get("/checkout", homeController.checkout)
+
+router.get("/setPlayer", authMiddlewares.checkIsAdmin, playerController.list);
+router.post("/setPlayer", playerController.create);
+router.get("/setplayer/delete/:id", playerController.destroy);
 
 
-router.get("/penaltylist", homeController.penaltyList);
-router.get("/registerlist", homeController.registerList);
-router.get("/playerranking",homeController.playerRanking)
+router.get("/setPenalty", authMiddlewares.checkIsAdmin, penaltyController.list);
+router.post("/setPenalty", penaltyController.create);
+router.get("/setPenalty/delete/:id", penaltyController.destroy);
+
+router.get("/setRegister", authMiddlewares.checkIsAdmin, registerController.list);
+router.post("/setRegister", registerController.create);
+router.get("/setRegister/delete/:id", registerController.destroy);
+
+router.get("/setPayment", authMiddlewares.checkIsAdmin, paymentController.list);
+router.post("/setPayment", paymentController.registerPaid);
+
+router.get("/setTeam", authMiddlewares.checkIsAdmin, teamController.list);
+router.post("/setTeam", teamController.update);
 
 
-router.get("/setplayer", adminController.setPlayer);
-router.get("/setplayer/delete/:id", adminController.deleteOnePlayer);
-router.get("/setpenalty", adminController.setPenalty);
-router.get("/setpenalty/delete/:id", adminController.deleteOnePenalty);
-router.get("/setRegister", adminController.setRegister);
-router.get("/setregister/delete/:id", adminController.deleteOneRegister);
-router.get("/setpayment", adminController.setPayment);
-router.get("/settings", adminController.settings);
+router.get("/playerRanking", mainController.amountByPlayer);
+router.get("/penaltyList", mainController.penaltyList);
+router.get("/registerList", mainController.registerList);
+router.get("/stats", mainController.statsByType);
+
+router.get("/", homeController.home);
+
+router.get('/adminSignin', authController.signin);
+router.post('/adminSignin', authController.formAdminSigninSubmited); 
 
 
-router.post("/add-player", adminController.addPlayerAndRedirect);
-router.post("/add-penalty", adminController.addPenaltyAndRedirect);
-router.post("/add-register", adminController.addRegisterAndRedirect);
-router.post("/add-settlement", adminController.addPaymentAndRedirect);
-router.post("/add-settings", adminController.addSettingsAndRedirect);
 
-router.post("/checkout2", homeController.addCheckout);
+
+
+
+
+
+
 
 module.exports = router;

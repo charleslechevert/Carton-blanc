@@ -6,6 +6,7 @@
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
 
+    <% if(penalties.length > 0) { %>
     <section>
         <table class="penaltylist__container">
             <thead class="penaltylist__header">
@@ -27,6 +28,10 @@
             </tbody>
         </table>
     </section>
+    <% } else { %>
+        <p class="general__noPenalties-message">Aucune amende n'ont été distribuée!</p>
+    
+    <% } %>
 
 
 

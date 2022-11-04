@@ -4,7 +4,7 @@
 <div class="page-title">Fixe les règles</div>
 
 <div class="formcontainer-addplayer">
-   <form class="form-addplayer" method="POST" action="/add-penalty">
+   <form class="form-addplayer" method="POST" action="/setPenalty">
     <div class="admin__container-addpenalty">
       <label class="label-addplayer" for="type">Raison de l'amende</label>
       <select class="input-addplayer" name="type" id="type">
@@ -36,22 +36,24 @@
 
       </thead>
       <tbody>
-          <% for(penalty of penalties) { %>
+          <script src="popup.js" defer></script>
+          <% for(item of penalties) { %>
+            <%- include("partials/popup",{name: "penalty"}) %>
           <tr class="admin__row-form">
               <td class="admin__cell-form">
-                  <p class="admin__penaltyType"><%= penalty.type %></p>
+                  <p class="admin__penaltyType"><%= item.type %></p>
               </td>
   
               <td class="admin__cell-form">
-                  <p><%= penalty.amount %></p>
+                  <p><%= item.amount %></p>
               </td>
               <td class="admin__cell-form admin cell-form__modifier-container">
                 <button class="admin__cell-form__button">
                     <img class="admin__cell-form__img" src="modify.png" alt="">
                 </button>
-                <a href="/setpenalty/delete/<%= penalty.id %>" class="admin__cell-form__button">
-                    <img class="admin__cell-form__img" src="delete.png" alt="">
-                </a>
+                <button class="admin__cell-form__button" id="popup__openButton">
+                  <img class="admin__cell-form__img" src="delete.png" alt="">
+              </button>
             </td>
           </tr>
           <% } %>
