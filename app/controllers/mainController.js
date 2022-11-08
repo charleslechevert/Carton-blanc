@@ -6,9 +6,9 @@ const mainController = {
         const sumPlayers = await dataMapper.amountByPlayer();
         res.render("playerRanking", {sumPlayers})
         },
-    async penaltyList (req,res) {
+    async penaltylist (req,res) {
         const penalties = await Penalty.findAll({where:{active : true}});
-        res.render("penaltyList", {penalties})
+        res.render("penaltylist", {penalties})
         },
     async registerList (req,res) {
         const registers = await dataMapper.findRegisters();
