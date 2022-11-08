@@ -26,6 +26,6 @@ console.log("ok")
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Listening at http://localhost:${PORT}`);
+  console.log(`Liistening at http://localhost:${PORT}`);
 });
 
