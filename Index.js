@@ -2,7 +2,9 @@ require("dotenv").config();
 
 const session = require('express-session');
 const express = require('express');
+const path = require('path');
 const router = require("./app/router");
+
 
 const app = express();
 
@@ -15,7 +17,7 @@ app.use(session({
 
 
 app.set("view engine", "ejs");
-app.set("views", "./app/views");
+app.set('views', path.join(__dirname, '/app/views'));
 
 app.use(express.urlencoded({ extended: false }))
 
