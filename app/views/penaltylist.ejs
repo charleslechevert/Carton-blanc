@@ -6,7 +6,36 @@
         <img class="title__logo" src="logoclub.png" alt="">
     </div>
 
+    <% if(penalties.length > 0) { %>
+    <section>
+        <table class="penaltylist__container">
+            <thead class="penaltylist__header">
+                <th>Raison de l'amende</th>
+                <th>Montant</th>
+            </thead>
+            
+            <tbody>
+                <% for(penalty of penalties) { %>
+                <tr class="penaltylist__row">
+                    <td class="penaltylist__type">
+                        <p><%=penalty.type%></p>
+                    </td>
+                    <td class="penaltylist__amount">
+                        <p><%=penalty.amount%>€</p>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </section>
+    <% } else { %>
+        <p class="general__noPenalties-message">Aucune amende n'ont été distribuée!</p>
+    
+    <% } %>
 
+
+
+    
 </main>
     
 </body>
