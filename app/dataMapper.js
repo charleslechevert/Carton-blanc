@@ -4,7 +4,7 @@ const db = require("./database");
 
   async function amountByPlayer() {
     const result = await db.query(
-      `SELECT player.pseudo, SUM(penalty.amount) FROM register INNER JOIN player on register.player_id = player.id INNER JOIN penalty on register.penalty_id = penalty.id WHERE register.active = true GROUP BY player.id  ORDER BY SUM(penalty.amount) DESC;`)
+      `SELECT player.pseudo, SUM(penalty.amount) FROM register INNER JOIN player on register.player_id = player.id INNER JOIN penalty on register.penalty_id = penalty.id WHERE register.active = true GROUP BY player.pseudo  ORDER BY SUM(penalty.amount) DESC;`)
     console.log('CHECKU')
     console.log(result[0])
     return result[0];
