@@ -10,9 +10,9 @@ const mainController = {
         const penalties = await Penalty.findAll({where:{active : true}});
         res.render("penaltylist", {penalties})
         },
-    async registerList (req,res) {
+    async registerlist (req,res) {
         const registers = await dataMapper.findRegisters();
-        res.render("registerList", {registers});
+        res.render("registerlist", {registers});
         },
         async statsByType (req,res)  {
             const statsByType = await dataMapper.statByType();
