@@ -7,7 +7,8 @@ const homeController = {
         const sumPenalties = await dataMapper.sumPenalties();
         const sumPenaltiesPaid = await dataMapper.sumPenaltiesPaid();
         const starPlayer = await dataMapper.starPlayer();
-        const team = await Team.findAll();
+        team = {}
+        team = await Team.findAll();
 
 
         

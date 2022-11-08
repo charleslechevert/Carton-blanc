@@ -3,9 +3,6 @@
 
 <main class="home__main">
     <%- include("partials/title") %>
-
-
-
     <section class="home__box-container">
         <div class = "home__sectionTitle">
             <div class="home__sectionLogo-container">
@@ -56,7 +53,9 @@
         <div class="home__details-container">
             <div class="home__subdetail-container">
                 <h3 class="home__subdetail-title">Objectif de la cagnotte</h3>
+                <% if(team > 0) { %>
                 <p class="home__subdetail-text"><%= team[0].target %></p>
+                <% } %>
             </div>
             <div class="home__subdetail-container2">
                 <div class="home__subdetail-starplayer-title-container">
