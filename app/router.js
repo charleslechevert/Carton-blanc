@@ -42,7 +42,7 @@ router.post("/setTeam", teamController.update);
 
 router.get("/playerRanking", mainController.amountByPlayer);
 router.get("/penaltylist", mainController.penaltylist);
-router.get("/registerlist", mainController.registerList);
+router.get("/registerlist", mainController.registerlist);
 router.get("/stats", mainController.statsByType);
 
 router.get("/", homeController.home);
