@@ -11,7 +11,6 @@ const mainController = {
         },
     async registerList (req,res) {
         const registers = await dataMapper.findRegisters();
-        console.log(registers)
         res.render("registerList", {registers});
         },
         async statsByType (req,res)  {

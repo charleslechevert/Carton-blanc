@@ -12,9 +12,11 @@ const db = require("./database");
   }
 
   async function findPenalties() {
-    const result = await db.query("SELECT * FROM penalty WHERE active=true;");
-    console.log(result)
+    const result = await db.query("SELECT * FROM penalty;");
+    
     const penalties = result[0];
+    console.log('CHHEEEEECK')
+    console.log(penalties)
     
     return penalties;
   }
