@@ -1,4 +1,5 @@
 const dataMapper = require("../dataMapper");
+const { Penalty } = require("../models");
 
 const mainController = {
     async amountByPlayer (req,res) {
@@ -6,7 +7,7 @@ const mainController = {
         res.render("playerRanking", {sumPlayers})
         },
     async penaltyList (req,res) {
-        const penalties = await dataMapper.findPenalties();
+        const penalties = await Penalty.findAll({where:{active : true}});
         res.render("penaltyList", {penalties})
         },
     async registerList (req,res) {
