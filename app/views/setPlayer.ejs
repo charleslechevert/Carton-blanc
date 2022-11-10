@@ -2,9 +2,12 @@
 <script src="setplayer.js" defer></script>
 
 
+<main>
 
-
-<div class="page-title">Ajoute un joueur</div>
+    <div class="title__container">
+        <p class="title__text">Ajouter un joueur</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
 
 <div class="formcontainer-addplayer">
 <form class="form-addplayer" method="POST" action="/setPlayer">
@@ -49,12 +52,14 @@
         <th class="admin___headerform-text"> Nom</th>
         <th class="admin___headerform-text"> Pseudo</th>
         <th class="admin___headerform-text"> Email</th>
-        <th class="admin___headerform-text"> Modifier</th>
+        <th class="admin___headerform-text"> Supprimer</th>
     </thead>
     <tbody>
         <script src="popup.js" defer></script>
+        
         <% for(item of players) { %>
         <%- include("partials/popup",{name: "player"}) %>
+        
         <% const name = "player" %>
         <tr class="admin__row-form">
             <td class="admin__cell-form">
@@ -73,9 +78,6 @@
                 <p><%- item.email.replace(/@/g,"<br>@")%></p>
             </td>
             <td class="admin__cell-form admin cell-form__modifier-container">
-                <button class="admin__cell-form__button">
-                    <img class="admin__cell-form__img" src="modify.png" alt="">
-                </button>
                 <button class="admin__cell-form__button" id="popup__openButton">
                     <img class="admin__cell-form__img" src="delete.png" alt="">
                 </button>
@@ -87,7 +89,7 @@
 </table>
 
 </div>
-
+</main>
     
 </body>
 </html>

@@ -12,7 +12,7 @@ const db = require("./database");
   }
 
   async function findPenalties() {
-    const result = await db.query("SELECT * FROM penalty;");
+    const result = await db.query("SELECT * FROM penalty WHERE active=true;");
     
     const penalties = result[0];
     console.log('CHHEEEEECK')
@@ -22,7 +22,7 @@ const db = require("./database");
   }
 
   async function findRegisters() {
-    const result = await db.query("SELECT register.date, register.paid_status, player.pseudo, penalty.type FROM register INNER JOIN player on register.player_id = player.id INNER JOIN penalty on register.penalty_id = penalty.id WHERE register.active=true;")
+    const result = await db.query("SELECT register.date, register.paid_status, player.pseudo, penalty.type, register.descr FROM register INNER JOIN player on register.player_id = player.id INNER JOIN penalty on register.penalty_id = penalty.id WHERE register.active=true;")
     console.log(result)
     const registers = result[0];
     return registers;

@@ -19,6 +19,11 @@ Register.init({
     type: DataTypes.BOOLEAN,
     allowNull: false
   },
+  descr : {
+    type: DataTypes.TEXT,
+    allowNull: true
+
+  }
 
 }, {
   sequelize,

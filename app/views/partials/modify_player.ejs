@@ -1,0 +1,41 @@
+<div class="modify__container">
+    <p class="modify__header">Modifier</p>
+    <form class="form-addplayer" method="POST" action="/setPlayer/modify/<%=item.id%>">
+        <div class="admin__form-subcontainer modify__subcontainer">
+            <label class="label-addplayer" for="fname">Prénom</label>
+            <input class="input-addplayer" type="text" id="fname" name="fname" value="<%=item.fname%>">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+            <img class="admin_add-input--error-logo" src="error.png">
+            <small>Error message</small>
+        </div>
+        <div class="admin__form-subcontainer modify__subcontainer">
+            <label class="label-addplayer" for="lname">Nom</label>
+            <input class="input-addplayer" type="text" id="lname" name="lname" value="<%=item.lname%>">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+            <img class="admin_add-input--error-logo" src="error.png">
+            <small>Error message</small>
+        </div>
+        <div class="admin__form-subcontainer modify__subcontainer">
+            <label class="label-addplayer" for="pseudo">Pseudo</label>
+            <input class="input-addplayer" type="text" id="pseudo" name="pseudo" value="<%=item.pseudo%>">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+            <img class="admin_add-input--error-logo" src="error.png">
+            <small>Error message</small>
+        </div>
+        <div class="admin__form-subcontainer modify__subcontainer">
+            <label class="label-addplayer" for="email">email</label>
+            <input class="input-addplayer" type="text" id="email" name="email" value="<%=item.email%>">
+            <img class="admin_add-input--validation-logo" src="paid.png">
+            <img class="admin_add-input--error-logo" src="error.png">
+            <small>Error message</small>
+        </div>
+        <div class="modify__buttonContainer">
+            <a id="modify__cancelButton" class="modify__cancelButton">Annuler</a>
+            <button class="modify__okButton">Valider</button>
+        </div>
+        
+
+        </div>
+        <div id="modify__overlay"></div>
+    </form>
+</div>

@@ -1,7 +1,12 @@
 <%- include("partials/headers") %>
 <script src="setPenalty.js" defer></script>
 
-<div class="page-title">Fixe les règles</div>
+<main>
+
+    <div class="title__container">
+        <p class="title__text">Fixe les règles</p>
+        <img class="title__logo" src="logoclub.png" alt="">
+    </div>
 
 <div class="formcontainer-addplayer">
    <form class="form-addplayer" method="POST" action="/setPenalty">
@@ -32,7 +37,7 @@
       <thead>
           <th class="admin___headerform-text"> Raison </th>
           <th class="admin___headerform-text"> Montant</th>
-          <th class="admin___headerform-text"> Modifier</th>
+          <th class="admin___headerform-text"> Supprimer</th>
 
       </thead>
       <tbody>
@@ -48,9 +53,7 @@
                   <p><%= item.amount %></p>
               </td>
               <td class="admin__cell-form admin cell-form__modifier-container">
-                <button class="admin__cell-form__button">
-                    <img class="admin__cell-form__img" src="modify.png" alt="">
-                </button>
+                
                 <button class="admin__cell-form__button" id="popup__openButton">
                   <img class="admin__cell-form__img" src="delete.png" alt="">
               </button>
@@ -63,4 +66,6 @@
 
     
 </body>
+
+</main>
 </html>

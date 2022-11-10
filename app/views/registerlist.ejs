@@ -26,7 +26,11 @@
                     <p><%=register.pseudo%></p>
                 </td>
                 <td class="registerlist__raison">
+                <% if(register.descr) { %>
+                    <p><%=register.type%> <br>#<%=register.descr%></p>
+                <% } else { %>
                     <p><%=register.type%></p>
+                <% } %>
                 </td>
                 <td class="registerlist__paid">
                     <% if(register.paid_status) { %>

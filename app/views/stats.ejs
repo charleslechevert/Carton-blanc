@@ -8,7 +8,7 @@
     </div>
 
     
-    <% if(statsByType.length > 0) { %>
+    <% if(statsByType.length > 1) { %>
     <section class="stats__piechart-container">
         <div class="stats__piechart"></div>
         <div class="stats__piechart-descr">
@@ -26,9 +26,12 @@
         </div>
         
     </section>
-    <% } else { %>
-        <p class="general__noPenalties-message">Aucune amende n'ont été distribuée!</p>
+    <% } else if(statsByType.length == 0) { %>
+        <p class="general__noPenalties-message">Aucune amende distribuée!</p>
+    <% } else if(statsByType.length == 1) { %>
+        <p class="general__noPenalties-message">Il faut au moins deux catégories d'amendes distribuées afin d'avoir accès à cette section!</p>
     <% } %>
+
 
     </main>
 

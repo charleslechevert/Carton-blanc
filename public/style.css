@@ -9,6 +9,7 @@
 
  main {
     margin-top: 10vh;
+    margin-bottom: 5vh;
  }
 
   .main {
@@ -393,7 +394,6 @@ strong {
     border-radius: 4px;
     position: absolute;
     left:0;
-    z-index:10
     
 }
 
@@ -487,6 +487,8 @@ strong {
 .cell-form__modifier-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .admin__cell-form__button{
@@ -600,6 +602,7 @@ strong {
     text-align: left;
     padding: 1vh 0;
     font-weight: bold;
+    margin-top:2vh;
     background-color: #FAFAFA;
     
 }
@@ -717,6 +720,7 @@ strong {
     width: 15%;
     padding: 2vh 0;
     text-align: center;
+    vertical-align: middle;
     font-size: 0.8rem;
     padding-right: 0.5vh;
 }
@@ -725,6 +729,7 @@ strong {
     width: 25%;
     padding: 2vh 0;
     text-align: center;
+    vertical-align: middle;
     font-size: 0.8rem;
     padding-right: 0.5vh;
 }
@@ -733,6 +738,7 @@ strong {
     width: 45%;
     padding: 2vh 0;
     text-align: center;
+    vertical-align: middle;
     font-size: 0.8rem;
     padding-right: 0.5vh;
 }
@@ -741,6 +747,7 @@ strong {
     width: 15%;
     padding: 2vh 0;
     text-align: center;
+    vertical-align: middle;
     font-size: 0.8rem;  
 }
 
@@ -809,6 +816,8 @@ strong {
     border-bottom: 1px solid black;
     width: 90vw;
     background-color: rgba(252, 248, 248, 0.97);
+    margin: 1vh auto;
+    max-width:800px;
     
 }
 
@@ -887,36 +896,7 @@ strong {
 }
 
 
-/* CHECKOUT2 */
-
-.checkout2__info-container {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    max-width: 800px;
-    width: 75vw;
-    margin : 3vh auto;
-    text-transform: uppercase;
-}
-
-.checkout__pay-button {
-    display: block;
-    margin : 0 auto;
-    margin-top : 3vh;
-    margin-bottom: 3vh;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    font-weight: bolder;
-    text-transform: uppercase;
-    background-color: rgb(239, 248, 244);
-    box-shadow: 5px 3px 0 yellow;
-    padding: 1rem 2rem;
-}
+/* POPUP */
 
 .popup__container {
     position: fixed;
@@ -992,3 +972,85 @@ strong {
     align-items: center;
 
 }
+
+/* MODIFY */
+
+.modify__container {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+    z-index:10;
+    background-color: white;
+    max-width:600px;
+    width: 80%;
+    padding: 2vh;
+}
+
+#modify__overlay.modify__active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.modify__header {
+    margin: 0 2vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.modify__container.modify__active {
+    transform: translate(-50%,-50%) scale(1);
+    
+}
+
+#modify__overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index:5;
+}
+
+.modify__buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.modify__cancelButton {
+    border-radius: 5px;
+    color: var(--color1);
+    background-color: white;
+    border: 2px solid var(--color1);
+    text-transform: uppercase;
+    padding: 2vh 2vh;
+    font-weight: bolder;
+    font-size: 1rem;
+
+}
+
+.modify__okButton {
+    border-radius: 5px;
+    color:white;
+    background-color: var(--color1);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 2.3vh 2vh 1.7vh 2vh;
+    font-weight: bolder;
+    align-items: center;
+
+}
+
+.modify__subcontainer {
+    margin: 0 auto;
+}
+

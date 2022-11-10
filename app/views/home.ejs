@@ -13,7 +13,7 @@
         
         <div class="home__box-resume">
             <div class="home__box-resume-split">
-                <% if(sumPenaltiesPaid[0].sum) { %>
+                <% if(sumPenalties[0].sum) { %>
                 <h2 class="home__box-resume-amount" id="totalPenalties"><%=sumPenalties[0].sum %>€</h2>
                 <% } else { %>
                     <h2 class="home__box-resume-amount" id="totalPenaltiesPaid">0€</h2>
@@ -53,9 +53,8 @@
         <div class="home__details-container">
             <div class="home__subdetail-container">
                 <h3 class="home__subdetail-title">Objectif de la cagnotte</h3>
-                <% if(team > 0) { %>
                 <p class="home__subdetail-text"><%= team[0].target %></p>
-                <% } %>
+                
             </div>
             <div class="home__subdetail-container2">
                 <div class="home__subdetail-starplayer-title-container">

@@ -22,6 +22,8 @@
         <option value="<%= penalty.type %>"><%= penalty.type %></option>
         <% } %>
     </select>
+    <label class="label-addplayer" for="descr">Commentaires</label>
+    <input class="input-addplayer" type="text" id="descr" name="descr" placeholder="140 caractères max :)">
     <input class="admin__addform-button"type="submit" value="Valider">
 
 </form>
@@ -33,7 +35,7 @@
         <th class="admin___headerform-text"> Jouer </th>
         <th class="admin___headerform-text"> Raison</th>
         <th class="admin___headerform-text"> Payé?</th>
-        <th class="admin___headerform-text"> Modifier</th>
+        <th class="admin___headerform-text"> Supprimer</th>
     </thead>
     <tbody>
         <script src="popup.js" defer></script>
@@ -46,7 +48,11 @@
                 <p><%= item.player.pseudo %></p>
             </td>
             <td class="admin__cell-form">
+                <% if(item.descr) { %>
+                <p><%= item.penalty.type %><br>#<%= item.descr %></p>
+                <% }else { %>
                 <p><%= item.penalty.type %></p>
+                <% } %>
             </td>
 
             <td class="admin__cell-form">
@@ -59,17 +65,16 @@
             <% if(!item.paid_status) { %>
             <%- include("partials/popup",{name: "register"}) %>
             <td class="admin__cell-form admin cell-form__modifier-container">
-                <button class="admin__cell-form__button">
-                    <img class="admin__cell-form__img" src="modify.png" alt="">
-                </button>
                 <button class="admin__cell-form__button" id="popup__openButton">
                     <img class="admin__cell-form__img" src="delete.png" alt="">
                 </button>
             </td>
             <% } %>
             
-          
+            
         </tr>
+        
+    
         <% } %>
     </tbody>
 

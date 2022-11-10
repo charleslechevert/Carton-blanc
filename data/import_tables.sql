@@ -47,7 +47,8 @@ CREATE TABLE IF NOT EXISTS "register"(
   "active" BOOLEAN NOT NULL,
   "penalty_id" INTEGER NOT NULL REFERENCES "penalty"("id"), 
   "player_id" INTEGER NOT NULL REFERENCES "player"("id"),
-  "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP, -- on peut également utiliser NOW()
+  "descr" TEXT,
+  "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP, 
   "updated_at" TIMESTAMPTZ
 );
 
