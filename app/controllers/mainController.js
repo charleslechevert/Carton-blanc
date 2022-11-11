@@ -7,7 +7,7 @@ const mainController = {
         res.render("playerRanking", {sumPlayers})
         },
     async penaltylist (req,res) {
-        const penalties = await Penalty.findAll({where:{active : true}});
+        const penalties = await Penalty.findAll({where:{active : true},order: [['amount', 'DESC']]});
         res.render("penaltylist", {penalties})
         },
     async registerlist (req,res) {
