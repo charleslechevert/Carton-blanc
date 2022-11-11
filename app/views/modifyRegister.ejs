@@ -1,0 +1,41 @@
+<%- include("partials/headers") %>
+<script src="/setregister.js" defer></script>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">Modifier une amende</p>
+        <img class="title__logo" src="/logoclub.png" alt="">
+    </div>
+
+<div class="formcontainer-addplayer">
+    <form class="form-addplayer" method="POST" action="/modifyRegister/process/<%= register.id %>">
+        
+        <label class="label-addplayer" for="player">Joueur</label>
+        <select class="input-addplayer" name="player" id="player">
+            <% for(player of players) { %>
+            <option value="<%= player.pseudo %>"><%= player.pseudo %></option>
+            <% } %>
+        </select>
+    
+        <label class="label-addplayer" for="type">Raison de l'amende</label>
+        <select class="input-addplayer" name="type" id="type">
+            <% for(penalty of penalties) { %>
+            <option value="<%= penalty.type %>"><%= penalty.type %></option>
+            <% } %>
+        </select>
+        <label class="label-addplayer" for="descr">Date</label>
+        <% if(register.date.getDate() < 10) { %>
+        <input class="input-addplayer" type="date" id="date" name="date" value="<%=register.date.getFullYear()%>-<%=register.date.getMonth()+1%>-0<%=register.date.getDate()%>">
+        <% } else { %>
+        <input class="input-addplayer" type="date" id="date" name="date" value="<%=register.date.getFullYear()%>-<%=register.date.getMonth()+1%>-<%=register.date.getDate()%>">
+        <% } %>
+
+
+        <label class="label-addplayer" for="descr">Commentaires</label>
+        <input class="input-addplayer" type="text" id="descr" name="descr" placeholder="140 caractères max :)" value="<%=register.descr%>">
+        <small></small>
+        <input class="admin__addform-button"type="submit" value="Valider">
+    
+    </form>
+    </div>
+

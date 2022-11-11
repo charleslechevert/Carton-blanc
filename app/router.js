@@ -23,7 +23,8 @@ router.get("/admin",authMiddlewares.checkIsAdmin, (req,res) => {
 router.get("/setPlayer", authMiddlewares.checkIsAdmin, playerController.list);
 router.post("/setPlayer", playerController.create);
 router.get("/setplayer/delete/:id", playerController.destroy);
-router.post("/setPlayer/modify/:id", playerController.modify);
+router.get("/modifyPlayer/:id", playerController.findOne);
+router.post("/modifyPlayer/process/:id", playerController.update);
 
 
 router.get("/setPenalty", authMiddlewares.checkIsAdmin, penaltyController.list);
@@ -35,6 +36,8 @@ router.get("/setPenalty/delete/:id", penaltyController.destroy);
 router.get("/setRegister", authMiddlewares.checkIsAdmin, registerController.list);
 router.post("/setRegister", registerController.create);
 router.get("/setRegister/delete/:id", registerController.destroy);
+router.get("/modifyRegister/:id", registerController.findOne);
+router.post("/modifyRegister/process/:id", registerController.update);
 
 router.get("/setPayment", authMiddlewares.checkIsAdmin, paymentController.list);
 router.post("/setPayment", paymentController.registerPaid);

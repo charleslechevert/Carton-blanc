@@ -1,4 +1,5 @@
 <%- include("partials/headers") %>
+<script src="setregister.js" defer></script>
 
 <main class="main">
     <div class="title__container">
@@ -24,6 +25,7 @@
     </select>
     <label class="label-addplayer" for="descr">Commentaires</label>
     <input class="input-addplayer" type="text" id="descr" name="descr" placeholder="140 caractères max :)">
+	<small></small>
     <input class="admin__addform-button"type="submit" value="Valider">
 
 </form>
@@ -35,7 +37,7 @@
         <th class="admin___headerform-text"> Jouer </th>
         <th class="admin___headerform-text"> Raison</th>
         <th class="admin___headerform-text"> Payé?</th>
-        <th class="admin___headerform-text"> Supprimer</th>
+        <th class="admin___headerform-text"> Modifier</th>
     </thead>
     <tbody>
         <script src="popup.js" defer></script>
@@ -65,6 +67,9 @@
             <% if(!item.paid_status) { %>
             <%- include("partials/popup",{name: "register"}) %>
             <td class="admin__cell-form admin cell-form__modifier-container">
+                <a class="admin__cell-form__button" href="/modifyRegister/<%=item.id%>">
+                    <img class="admin__cell-form__img" src="modify.png" alt="">
+                </a>
                 <button class="admin__cell-form__button" id="popup__openButton">
                     <img class="admin__cell-form__img" src="delete.png" alt="">
                 </button>

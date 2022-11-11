@@ -523,6 +523,7 @@ strong {
 .admin__form-subcontainer {
     position: relative;
     width: 40vw;
+    margin : 0 auto;
 }
 
 .admin_add-input--validation-logo {

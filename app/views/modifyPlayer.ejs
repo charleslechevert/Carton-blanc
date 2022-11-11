@@ -1,0 +1,84 @@
+<%- include("partials/headers") %>
+<script src="/setplayer.js" defer></script>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">Modifier un joueur</p>
+        <img class="title__logo" src="/logoclub.png" alt="">
+    </div>
+
+    <form class="form-addplayer" method="POST" action="/modifyPlayer/process/<%=player.id%>">
+        <div class="admin__container-add-items">
+            <div class="admin__form-subcontainer">
+                <label class="label-addplayer" for="fname">Prénom</label>
+                <input class="input-addplayer" type="text" id="fname" name="fname"  value="<%=player.fname%>">
+                <img class="admin_add-input--validation-logo" src="/paid.png">
+                <img class="admin_add-input--error-logo" src="/error.png">
+                <small>Error message</small>
+            </div>
+            <div class="admin__form-subcontainer">
+                <label class="label-addplayer" for="lname">Nom</label>
+                <input class="input-addplayer" type="text" id="lname" name="lname" value="<%=player.lname%>">
+                <img class="admin_add-input--validation-logo" src="/paid.png">
+                <img class="admin_add-input--error-logo" src="/error.png">
+                <small>Error message</small>
+            </div>
+            <div class="admin__form-subcontainer">
+                <label class="label-addplayer" for="pseudo">Pseudo</label>
+                <input class="input-addplayer" type="text" id="pseudo" name="pseudo" value="<%=player.pseudo%>">
+                <img class="admin_add-input--validation-logo" src="/paid.png">
+                <img class="admin_add-input--error-logo" src="/error.png">
+                <small>Error message</small>
+            </div>
+            <div class="admin__form-subcontainer">
+                <label class="label-addplayer" for="email">email</label>
+                <input class="input-addplayer" type="text" id="email" name="email" value="<%=player.email%>">
+                <img class="admin_add-input--validation-logo" src="/paid.png">
+                <img class="admin_add-input--error-logo" src="/error.png">
+                <small>Error message</small>
+            </div>
+        </div>
+        
+        <button class="admin__addform-button">Valider</button>
+    
+    </form>
+
+    <table class="admin__form">
+    <thead>
+        <th class="admin___headerform-text"> Prénom </th>
+        <th class="admin___headerform-text"> Nom</th>
+        <th class="admin___headerform-text"> Pseudo</th>
+        <th class="admin___headerform-text"> Email</th>
+    </thead>
+    <tbody>
+        
+        <% for(item of players) { %>
+        
+        <% const name = "player" %>
+        <tr class="admin__row-form">
+            <td class="admin__cell-form">
+                <p><%= item.fname %></p>
+            </td>
+
+            <td class="admin__cell-form">
+                <p><%= item.lname %></p>
+            </td>
+
+            <td class="admin__cell-form admin__pseudo">
+                <p><%= item.pseudo%></p>
+            </td>
+                
+            <td class="admin__cell-form">
+                <p><%- item.email.replace(/@/g,"<br>@")%></p>
+            </td>
+        </tr>
+        <% } %>
+    </tbody>
+
+</table>
+
+</div>
+</main>
+    
+</body>
+</html>

@@ -5,8 +5,11 @@ const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const pseudo = document.getElementById('pseudo');
 const email = document.getElementById('email');
+let currentPseudo =''
 
-
+window.addEventListener('load', (event) => {
+    currentPseudo = document.getElementById("pseudo").value.toUpperCase()
+});
 
 
 form.addEventListener("submit", (event) => {
@@ -88,8 +91,13 @@ function pseudos() {
     let pseudosArray = []
     const pseudos = document.querySelectorAll(".admin__pseudo")
     for(const pseudo of pseudos) {
+        console.log(currentPseudo)
+        console.log(pseudo.innerText)
+        if(currentPseudo != pseudo.innerText ) {    
         pseudosArray.push(pseudo.innerText)
+        }
     }
+    console.log(pseudosArray)
     return pseudosArray;
 }
 

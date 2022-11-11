@@ -81,6 +81,56 @@ const registerController = {
 })
 console.log(registers)
 res.render('playerRanking', { registers })
+  },
+  async findOne(req, res) {
+    if(req.session.role == 'admin') {
+    
+    
+    // req.body contient les données de mon formulaire
+    // ça tombe bien, mon formulaire à un champ name comme ce qu'a besoin mon level, quel hasard...
+    try {
+      const players = await Player.findAll({where:{active : true}});
+      const penalties = await Penalty.findAll({where:{active : true}});
+      const register = await Register.findOne({
+        where: { id: req.params.id }})
+        
+      // Si mon level est bien créer, je redirige sur ma page en GET /levels
+      res.render('modifyRegister', { register, players, penalties });
+    } catch(e) {
+      // @TODO Gestion de notre erreur
+      res.redirect('/setRegister');
+    }
+  } else {
+    res.redirect('/');
+  }
+  },
+  async update(req,res) {
+    if(req.session.role == 'admin') {
+  
+      const registerUpdated = {
+        type : req.body.type,
+        player : req.body.player,
+        descr : req.body.descr,
+        date : req.body.date
+        
+  
+      }
+    
+    
+      // req.body contient les données de mon formulaire
+      // ça tombe bien, mon formulaire à un champ name comme ce qu'a besoin mon level, quel hasard...
+      try {
+        const register = await Register.update(registerUpdated,
+        { where: { id: req.params.id } })
+        res.redirect('/setRegister');
+  
+      } catch(e) {
+        // @TODO Gestion de notre erreur
+        res.redirect('/setRegister');
+      }
+      } else {
+        
+    }
   }
 }
 
