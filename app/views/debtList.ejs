@@ -1,0 +1,36 @@
+<%- include("partials/headers") %>
+<script src="/setplayer.js" defer></script>
+
+<main class="main">
+    <div class="title__container">
+        <p class="title__text">L'ardoise des joueurs</p>
+        <img class="title__logo" src="/logoclub.png" alt="">
+    </div>
+
+<section>
+    <% if (debts.length > 0) { %>
+            <table class="penaltylist__container">
+                <thead class="penaltylist__header">
+        
+                    <th class="penaltylist__header-text">Joueur</th>
+                    <th>Montant à payer</th>
+                </thead>
+                <tbody>
+                    <% for(debt of debts) { %>
+                    <tr class="playerranking__row">
+                        <td class="playerranking__player"><%= debt.pseudo %></td>
+                        <td class="playerranking__amount"><%= debt.sum %>€</td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        
+        
+        <% } else { %>
+            <p class="general__noPenalties-message">Aucune amende distribuée!</p>
+        
+        <% } %>
+    
+
+
+</section>

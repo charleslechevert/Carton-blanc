@@ -7,7 +7,7 @@ console.log(search)
 search.addEventListener('keyup', () => {
     const searchValue = search.value
     for(row of rows) {
-        const isVisible = row.querySelector('.registerlist__joueur').innerText.includes(searchValue)  
+        const isVisible = row.querySelector('.registerlist__joueur').innerText.toLowerCase().includes(searchValue.toLowerCase())  
         row.classList.toggle('registerlist__hide-row', !isVisible)
         
     }
@@ -21,7 +21,7 @@ document.querySelector('.registerlist__paidfilter').addEventListener('click', ()
     let i = 0;
 
     for(row of rows) {
-        if(paid[i].getAttribute('src') != 'paid.png' && row.querySelector('.registerlist__joueur').innerText.includes(search.value)  ) {
+        if(paid[i].getAttribute('src') != 'paid.png' && row.querySelector('.registerlist__joueur').innerText.toLowerCase().includes(search.value.toLowerCase())  ) {
             console.log('ok')
             row.classList.toggle('registerlist__hide-row')
         } else {

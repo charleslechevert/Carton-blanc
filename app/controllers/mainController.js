@@ -18,6 +18,10 @@ const mainController = {
             const statsByType = await dataMapper.statByType();
             res.render("stats", { statsByType })
         },
+        async debtList (req,res) {
+            const debts = await dataMapper.debtList();
+            res.render('debtList', {debts})
+        }
 
 };
 

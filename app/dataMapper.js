@@ -63,11 +63,13 @@ const db = require("./database");
     
   }
 
+  async function debtList() {
+    const result = await db.query(
+      `SELECT player.pseudo, SUM(penalty.amount) FROM register INNER JOIN player on register.player_id = player.id INNER JOIN penalty on register.penalty_id = penalty.id WHERE register.active = true AND register.paid_status = false GROUP BY player.pseudo  ORDER BY SUM(penalty.amount) DESC;`)
+    return result[0]
+  }
 
-  
 
-
-  
 
 module.exports = {
     amountByPlayer,
@@ -77,6 +79,7 @@ module.exports = {
     sumPenalties,
     sumPenaltiesPaid,
     starPlayer,
-    teamTarget
+    teamTarget,
+    debtList
     
 };

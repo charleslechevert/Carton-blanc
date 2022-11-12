@@ -708,6 +708,10 @@ strong {
     
 }
 
+.penaltylist__header-text {
+    padding-bottom: 1.5vh;
+}
+
 
 /*REGISTERLIST*/
 
@@ -830,7 +834,7 @@ strong {
     padding: 2vh 0;
     padding:1vh 2vh;
     text-align: center;
-    font-weight: bold;
+    
     
 }
 
@@ -839,7 +843,7 @@ strong {
     padding: 2vh 0;
     padding:1vh 2vh;
     text-align: center;
-    font-weight: bold;
+    
     
 }
 

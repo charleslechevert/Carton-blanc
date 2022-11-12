@@ -50,6 +50,8 @@ router.get("/playerRanking", mainController.amountByPlayer);
 router.get("/penaltylist", mainController.penaltylist);
 router.get("/registerlist", mainController.registerlist);
 router.get("/stats", mainController.statsByType);
+router.get("/debtList", mainController.debtList);
+
 
 router.get("/", homeController.home);
 
