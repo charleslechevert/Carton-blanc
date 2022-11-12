@@ -752,6 +752,40 @@ strong {
     font-size: 0.8rem;  
 }
 
+.registerlist__hide-row {
+    display: none;
+    
+}
+
+.registerlist__filteroption-container {
+    display:flex;
+    flex-direction: row;
+    justify-content:end;
+}
+
+.registerlist__paidfilter {
+    border-radius: 8px;
+    border : 2px solid rgb(58, 58, 58);
+    color : rgb(58,58,58);
+    display : inline;
+    padding: 0.5vh 0.5vh;
+    text-align: right;
+    margin : 0 3vh;
+}
+
+.registerlist__paidfilter--on {
+    background-color: rgb(58,58,58); ;
+    border : 2px solid rgb(58, 58, 58);
+    color : white;
+
+}
+
+.registerlist__searchbar{
+    border-radius: 8px;
+    border : 2px solid rgb(58, 58, 58);
+    background-color: #FAFAFA;
+}
+
 .playerranking__row {
     margin : 1vh 0;
     text-transform: uppercase;

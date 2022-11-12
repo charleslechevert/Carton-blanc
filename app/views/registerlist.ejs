@@ -1,4 +1,6 @@
 <%- include("partials/headers") %>
+<script src="registerlist.js" defer></script>
+
 
 <main class="main">
     <div class="title__container">
@@ -8,6 +10,11 @@
 
 <% if(registers.length > 0) { %>
 <section >
+
+    <div class="registerlist__filteroption-container">
+        <input type="text" class="registerlist__searchbar" placeholder="Recherche par pseudo">
+        <p class="registerlist__paidfilter">Non payé</p>
+    </div>
     <table class="penaltylist__container">
         <thead class="penaltylist__header">
             <th>Date</th>
@@ -23,7 +30,7 @@
                     <p><%= `${register.date.getDate()}-${register.date.getMonth()+1}-${register.date.getFullYear()} `%></p>
                 </td>
                 <td class="registerlist__joueur">
-                    <p><%=register.pseudo%></p>
+                    <%=register.pseudo%>
                 </td>
                 <td class="registerlist__raison">
                 <% if(register.descr) { %>
