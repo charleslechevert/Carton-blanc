@@ -64,7 +64,7 @@
                     <img class="registerlist__form-paidlogo" src="notpaid.png" alt="">
                 <% } %>
             </td>
-            <% if(!item.paid_status) { %>
+            <% if(!item.paid_status || item.paid_status) { %>
             <%- include("partials/popup",{name: "register"}) %>
             <td class="admin__cell-form admin cell-form__modifier-container">
                 <a class="admin__cell-form__button" href="/modifyRegister/<%=item.id%>">

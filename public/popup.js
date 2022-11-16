@@ -1,6 +1,6 @@
 const openPopup = document.querySelectorAll('#popup__openButton')
 const closePopup = document.querySelectorAll('#popup__cancelButton')
-console.log(closePopup)
+
 
 const overlay = document.querySelectorAll('#popup__overlay')
 const popup = document.querySelectorAll('.popup__container')
