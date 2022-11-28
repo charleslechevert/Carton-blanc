@@ -12,7 +12,7 @@ const homeController = {
 
 
         
-        res.render("home", { sumPenalties , starPlayer, team, sumPenaltiesPaid })
+        res.render("index", { sumPenalties , starPlayer, team, sumPenaltiesPaid })
         },
     
 
