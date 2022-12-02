@@ -10,6 +10,7 @@ const authController = {
       const { password } = req.body;
     // 1 - Je vais chercher dans ma BDD l'utilisateur qui correspond au bon email
     const team = await Team.findAll();
+    console.log(team[0].admin_password)
     // 2 - Si je le trouve, je vais vérifer son mot de passe, sinon je retourne "Mauvaise identifiant"
     
 

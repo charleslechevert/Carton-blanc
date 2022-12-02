@@ -21,7 +21,7 @@ const playerController = {
     } catch(e) {
       console.log(e)
       // @TODO Gestion de notre erreur
-      res.redirect('/setPlayer');
+      res.redirect('/');
     }
   },
   async destroy(req, res) {
