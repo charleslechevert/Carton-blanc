@@ -2,7 +2,6 @@ const { Register } = require("../models");
 
 const playerController = {
     async list(req, res) {
-      console.log(req.body)
       const registers = await Register.findAll({ include : ['player','penalty'],
         where: {
            paid_status: false,active: true

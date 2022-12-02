@@ -4,7 +4,6 @@ const typeOptions = require('../typeOptions');
 
 const penaltyController = {
   async list(req, res) {
-    console.log(req.body)
     const penalties = await Penalty.findAll({where:{active : true}});
     res.render('setPenalty', { penalties, typeOptions });
   },

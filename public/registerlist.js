@@ -3,7 +3,6 @@ const paid = document.querySelectorAll(".registerlist__form-paidlogo")
 
 
 const search = document.querySelector('.registerlist__searchbar')
-console.log(search)
 search.addEventListener('keyup', () => {
     const searchValue = search.value
     for(row of rows) {
@@ -22,7 +21,6 @@ document.querySelector('.registerlist__paidfilter').addEventListener('click', ()
 
     for(row of rows) {
         if(paid[i].getAttribute('src') != 'paid.png' && row.querySelector('.registerlist__joueur').innerText.toLowerCase().includes(search.value.toLowerCase())  ) {
-            console.log('ok')
             row.classList.toggle('registerlist__hide-row')
         } else {
             console.log('shey')

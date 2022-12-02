@@ -94,7 +94,6 @@ form2.addEventListener("submit", (event) => {
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
-    console.log(formControl)
 	const small = formControl.querySelector('small');
 	formControl.className = 'admin__form-subcontainer error';
 	small.innerText = message;

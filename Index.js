@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(__dirname + '/public'));
 
 app.use(router);
-console.log("ok")
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

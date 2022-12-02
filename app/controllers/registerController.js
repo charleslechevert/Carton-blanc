@@ -8,7 +8,6 @@ const registerController = {
     const players = await Player.findAll({where:{active : true}});
     const penalties = await Penalty.findAll({where:{active : true}});
     const registers = await Register.findAll({ include : ['player','penalty'], where: {active : true},order: [['date', 'DESC']]});
-    console.log(registers)
     res.render('setRegister', { registers, penalties, players });
   },
 
@@ -79,7 +78,7 @@ const registerController = {
     ],
     group: ['Player.id']
 })
-console.log(registers)
+
 res.render('playerRanking', { registers })
   },
   async findOne(req, res) {
