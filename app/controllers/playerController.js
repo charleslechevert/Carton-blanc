@@ -10,7 +10,7 @@ const playerController = {
   async create(req, res) {
     data = req.body;
     data.active = true;
-    data.team_id = '1f9d0d04-3ac2-4994-bcf7-f20a6b29bcd2';
+    data.team_id = '37c62bde-35cf-4e72-b61a-821d801877d0';
     // req.body contient les données de mon formulaire
     // ça tombe bien, mon formulaire à un champ name comme ce qu'a besoin mon level, quel hasard...
     try {
