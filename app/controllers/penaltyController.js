@@ -11,7 +11,6 @@ const penaltyController = {
   async create(req, res) {
     data = req.body;
     data.active = true;
-    console.log(data)
     // req.body contient les données de mon formulaire
     // ça tombe bien, mon formulaire à un champ name comme ce qu'a besoin mon level, quel hasard...
     try {
