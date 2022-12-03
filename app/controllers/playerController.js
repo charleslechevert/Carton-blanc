@@ -16,7 +16,7 @@ const playerController = {
     // req.body contient les données de mon formulaire
     // ça tombe bien, mon formulaire à un champ name comme ce qu'a besoin mon level, quel hasard...
     try {
-      await Player.create({ fname: "Jane" });
+      await Player.create(data);
       
       // Si mon level est bien créer, je redirige sur ma page en GET /levels
       res.redirect('/setPlayer');
