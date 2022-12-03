@@ -10,7 +10,7 @@ const playerController = {
   async create(req, res) {
     data = req.body;
     data.active = true;
-    data.team_id = '37c62bde-35cf-4e72-b61a-821d801877d0';
+    data.team_id = 37;
     console.log('CHECKKKK')
     console.log(data)
     // req.body contient les données de mon formulaire
