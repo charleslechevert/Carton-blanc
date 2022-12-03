@@ -11,6 +11,7 @@ const playerController = {
     data = req.body;
     data.active = true;
     data.team_id = '37c62bde-35cf-4e72-b61a-821d801877d0';
+    console.log('CHECKKKK')
     console.log(data)
     // req.body contient les données de mon formulaire
     // ça tombe bien, mon formulaire à un champ name comme ce qu'a besoin mon level, quel hasard...
