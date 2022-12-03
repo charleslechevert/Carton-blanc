@@ -10,13 +10,13 @@ const playerController = {
   async create(req, res) {
     data = req.body;
     data.active = true;
-    
+    data.team_id = '37c62bde-35cf-4e72-b61a-821d801877d0';
     console.log('CHECKKKK')
     console.log(data)
     // req.body contient les données de mon formulaire
     // ça tombe bien, mon formulaire à un champ name comme ce qu'a besoin mon level, quel hasard...
     try {
-      await Player.create(data);
+      await Player.create({ fname: "Jane" });
       
       // Si mon level est bien créer, je redirige sur ma page en GET /levels
       res.redirect('/setPlayer');
