@@ -24,7 +24,7 @@ const registerController = {
     register.penalty_id = penalty.id
     register.player_id = player.id
     register.date = new Date()
-    register.paid_status = true;
+    register.paid_status = false;
     register.active = true;
     register.descr = req.body.descr
    

@@ -8,9 +8,9 @@ teamController = {
     },
     async update(req,res) {
         team = req.body
-        await Team.update({ target: team.target }, {
+        await Team.update({ target: team.target, sentence: team.sentence }, {
             where: {
-               id: 1
+               id: '37c62bde-35cf-4e72-b61a-821d801877d0'
             }
           });
           res.redirect('/setTeam');

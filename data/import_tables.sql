@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS "team"(
   "short_name" TEXT NOT NULL,
   "admin_password" TEXT NOT NULL,
   "target" TEXT NOT NULL,
+  "sentence" TEXT NOT NULL,
   "active" BOOLEAN NOT NULL,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP, -- on peut également utiliser NOW()
   "updated_at" TIMESTAMPTZ

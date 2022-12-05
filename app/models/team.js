@@ -23,6 +23,10 @@ Team.init({
     type: DataTypes.TEXT,
     allowNull: false
   },
+  sentence: {
+    type: DataTypes.TEXT,
+    allowNull: false
+  },
   active: {
     type: DataTypes.BOOLEAN,
     allowNull: false

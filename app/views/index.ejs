@@ -3,6 +3,7 @@
 
 <main class="home__main">
     <%- include("partials/title") %>
+
     <section class="home__box-container">
         <div class = "home__sectionTitle">
             <div class="home__sectionLogo-container">
@@ -42,6 +43,22 @@
         <div class="home__progressbar-percentage">Pourcentage payé : 0%</div>
     </section>
 
+    <section class="home__box-container">
+        <div class = "home__sectionTitle">
+            <div class="home__sectionLogo-container">
+                <img class=" home__sectionLogo" src="sentence.png">
+            </div>
+            <h2 class = "home__sectionText">La phrase du moment </h2>
+        </div>
+        <div class="home__sentence-container">
+            <% if(!team[0].sentence) { %>
+            <p class="home__sentence-text">Rien à signaler pour le moment! </p>
+            <% } else { %>
+               <p class="home__sentence-text"> <%=team[0].sentence %> </p> 
+            <% } %>
+        </div>
+    </section>
+
 
     <section class="home__box-container">
         <div class = "home__sectionTitle">
@@ -76,17 +93,7 @@
 
     </section>
 
-    <section class="home__box-container">
-        <div class = "home__sectionTitle">
-            <div class="home__sectionLogo-container">
-                <img class=" home__sectionLogo" src="sentence.png">
-            </div>
-            <h2 class = "home__sectionText">La phrase de la semaine </h2>
-        </div>
-        <div class="home__sentence-container">
-            <p class="home__sentence-text">Week-end de derby !!! </p>
-        </div>
-    </section>
+
 
 
     
