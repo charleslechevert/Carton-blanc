@@ -6,9 +6,6 @@
 
     <section class="home__box-container">
         <div class = "home__sectionTitle">
-            <div class="home__sectionLogo-container">
-                <img class=" home__sectionLogo" src="flyingmoney.png">
-            </div>
             <h2 class = "home__sectionText">Montant de la cagnotte </h2>
         </div>
         
@@ -45,9 +42,17 @@
 
     <section class="home__box-container">
         <div class = "home__sectionTitle">
-            <div class="home__sectionLogo-container">
-                <img class=" home__sectionLogo" src="sentence.png">
-            </div>
+            <h2 class = "home__sectionText">Payer en ligne </h2>
+        </div>
+        <div class="home__sentence-container--lydia">
+            <img src="lydia-logo.png" class="home__lydia-logo">
+            <p>Pas de cash? Paye tes amendes directement avec Lydia!</p>
+
+        </div>
+    </section>
+
+    <section class="home__box-container">
+        <div class = "home__sectionTitle">
             <h2 class = "home__sectionText">La phrase du moment </h2>
         </div>
         <div class="home__sentence-container">
@@ -58,13 +63,11 @@
             <% } %>
         </div>
     </section>
+    
 
 
     <section class="home__box-container">
         <div class = "home__sectionTitle">
-            <div class="home__sectionLogo-container">
-                <img class=" home__sectionLogo" src="info.png">
-            </div>
             <h2 class = "home__sectionText">Informations </h2>
         </div>
         <div class="home__details-container">
@@ -73,19 +76,14 @@
                 <p class="home__subdetail-text"><%= team[0].target %></p>
                 
             </div>
-            <div class="home__subdetail-container2">
-                <div class="home__subdetail-starplayer-title-container">
-                    <img src="crown.png" alt="crown" class="home__subdetail-starplayer-letter">
-                    <img src="v.png" alt="v" class="home__subdetail-starplayer-letter">
-                    <img src="p.png" alt="p" class="home__subdetail-starplayer-letter">
-
-                </div>
+            <div class="home__subdetail-container">
+                <h3 class="home__subdetail-title">Joueur de la saison</h3>
                 <div class="home__subdetail-starplayer-data-container">
                     <% if(starPlayer.length == 1) { %>
                     <p class="home__subdetail-starplayer-name"><%= starPlayer[0].pseudo %></p>
                     <p class="home__subdetail-starplayer-amount"><%= starPlayer[0].sum %>€</p>
                     <% } else { %>
-                        <p class="home__subdetail-starplayer-null">Aucun joueur n'a payé d'amendes</p>
+                        <p class="home__subdetail-starplayer-null">Aucune amende payée</p>
                     <% } %>
                 </div>
             </div>

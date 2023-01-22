@@ -84,7 +84,7 @@ strong {
 .home__sectionTitle {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2vh;
+    margin: 2vh;
     
 
 }
@@ -101,7 +101,7 @@ strong {
 }
 
 .home__sectionText {
-    width : 75%;
+    width : 100%;
     text-transform: uppercase;
     font-weight: bold;
     padding: 1vh 0;
@@ -133,6 +133,15 @@ strong {
     
 }
 
+.home__box-overcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .home__sentence-container {
     display: flex;
     flex-direction: row;
@@ -141,12 +150,36 @@ strong {
     width: 60%;
     margin: 0 auto;
     border-radius: 5px;
-    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    box-shadow: 0px 10px 20px -10px var(--grayishBlue);
     border-top: 3px solid yellow;
     background-color: white;
     padding: 1.5vh;
     background-color: white;
 
+}
+
+.home__sentence-container--lydia {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px -10px var(--grayishBlue);
+    box-shadow: 2px 2px rgb(154, 154, 205);
+    background-color: rgb(58, 58, 58);
+    color: white;
+    padding: 1.5vh;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+.home__lydia-logo {
+    width: 6vh;
+    height: 6vh;
+    padding: 2vh;
 }
 
 .home__sentence-logo {
@@ -246,6 +279,7 @@ strong {
     align-items:stretch;
     max-width: 800px;
     margin: 1vh auto;
+    margin-bottom: 2.5vh;
 }
 
 .home__subdetail-container {
@@ -257,7 +291,7 @@ strong {
     padding: 1.5vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
 }
 
@@ -270,19 +304,6 @@ strong {
     
 }
 
-.home__subdetail-container2 {
-    width: 40%;
-    border-radius: 5px;
-    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
-    background-color: white;
-    border-top: 3px solid yellow;
-
-    padding: 1.5vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
 .home__subdetail-title2 {
     text-transform: uppercase;
@@ -353,6 +374,7 @@ strong {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 2.5vh;
 
 }
 
@@ -435,7 +457,7 @@ strong {
     margin: auto auto;
 }
 
-.text-admin {
+.admin__text {
     color: black;
     margin: 0 auto;
     padding: 2rem 0;
@@ -443,6 +465,7 @@ strong {
     width: 60%;
     text-decoration: none!important;
     text-transform: uppercase; 
+    text-align: center;
 }
 
 .admin__labelandinput-container {
@@ -794,14 +817,10 @@ strong {
     margin : 1vh 0;
     text-transform: uppercase;
     border-bottom: 0.8px solid rgb(178, 171, 171);
+    vertical-align: middle;
 }
 
-.playerranking__top-container {
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+
 
 .playerranking__top {
     padding:1vh 0.5vh;
@@ -811,9 +830,8 @@ strong {
     border-radius: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
+    justify-content:baseline;
+    margin: auto 0;
 }
 
 .playerranking__top-text {
@@ -830,25 +848,20 @@ strong {
 }
 
 .playerranking__player {
+    padding:1vh;
     width: 40%;
-    padding: 2vh 0;
-    padding:1vh 2vh;
-    text-align: center;
     
     
 }
 
 .playerranking__amount {
-    width: 35%;
-    padding: 2vh 0;
-    padding:1vh 2vh;
+    padding:1vh;
     text-align: center;
-    
+    vertical-align: middle;
     
 }
 
 /*ADMIN - SETTINGS*/
-
 .admin__settings-obj-input {
     display: block;
     border: none;

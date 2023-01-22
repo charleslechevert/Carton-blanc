@@ -25,6 +25,10 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(router);
 
+app.use((req, res, next) => {
+  res.redirect('/');
+});
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
