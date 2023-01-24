@@ -9,10 +9,13 @@
     <div class="formcontainer-addplayer">
         <form class="form-addplayer" method="POST" action="/setTeam" autocomplete="on">
                 <div>
-                    <label class="label-addplayer" for="fname">Objectif de la cagnotte</label>
+                    <label class="label-addplayer" for="target">Objectif de la cagnotte</label>
                     <textarea cols="40" rows="3" class="admin__settings-obj-input" type="text" id="target" name="target" placeholder="Aller voir un match de l'EAG avec les jeunes et acheter une tireuse à bières pour le foyer."><%=team[0].target%></textarea>
-                    <label class="label-addplayer" for="fname">La phrase du moment</label>
+                    <label class="label-addplayer" for="sentence">La phrase du moment</label>
                     <textarea cols="40" rows="3" class="admin__settings-obj-input" type="text" id="sentence" name="sentence" placeholder="Amendes levées cette semaine si toutes les équipes gagnent"><%=team[0].sentence%></textarea>
+                    <label class="label-addplayer" for="lydia_link">La cagnotte lydia</label>
+                    <p class="explanations__text">Afin que les joueurs de ton club puisse payer par carte bancaire, tu peux créer une cagnotte Lydia. Si tu n'as pas de compte Lydia, tu peux t'en créer un en téléchargeant leur application : c'est simple, rapide et gratuit! </p>
+                    <textarea cols="40" rows="3" class="admin__settings-obj-input" type="text" placeholder="Colle ici l'URL du lien de ta cagnotte lydia"></textarea>
                 </div>
             <input class="admin__addform-button"type="submit" value="Valider">
         

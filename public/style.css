@@ -171,6 +171,7 @@ strong {
     background-color: rgb(58, 58, 58);
     color: white;
     padding: 1.5vh;
+    text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
 
@@ -466,6 +467,7 @@ strong {
     text-decoration: none!important;
     text-transform: uppercase; 
     text-align: center;
+    font-weight: 600;
 }
 
 .admin__labelandinput-container {
@@ -637,6 +639,7 @@ strong {
     border-bottom: 1px solid black;
     width: 40vw;
     background-color: #FAFAFA;
+    max-width: 300px;
     
 }
 
@@ -865,11 +868,12 @@ strong {
 .admin__settings-obj-input {
     display: block;
     border: none;
-    border-bottom: 1px solid black;
+    border: 1px solid rgb(58, 58, 58);
     width: 90vw;
     background-color: rgba(252, 248, 248, 0.97);
     margin: 1vh auto;
     max-width:800px;
+    border-radius: 7px;
     
 }
 
@@ -1104,6 +1108,13 @@ strong {
 
 .modify__subcontainer {
     margin: 0 auto;
+}
+
+.explanations__text {
+    text-align: justify;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color:rgb(58, 58, 58);
 }
 
 /*---------------Modify Register */
