@@ -1,8 +1,8 @@
 :root {
-    --color1: rgb(62, 83, 71);
+    --color1: rgb(90, 122, 105);
     --color2: rgb(173, 207, 159);
     --color3: rgb(206, 216, 158);
-    --color4: rgb(255, 220, 174);
+    --color4: rgb(255, 253, 111);
 
     --grayishBlue: hsl(229, 6%, 66%);
   }
@@ -30,9 +30,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 10000;
-    
-
-    
+     
 }
 
 .header__logo-container {

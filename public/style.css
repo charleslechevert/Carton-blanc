@@ -1,20 +1,12 @@
-:root {
-    --color1: rgb(62, 83, 71);
-    --color2: rgb(173, 207, 159);
-    --color3: rgb(206, 216, 158);
-    --color4: rgb(255, 220, 174);
-  }
+
 
   /*GENERAL*/
-
- main {
-    margin-top: 10vh;
-    margin-bottom: 5vh;
- }
 
   .main {
     max-width: 800px;
     margin: 10vh auto;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
   }
 
   .page-title {
@@ -74,7 +66,7 @@ strong {
     margin: 1vh 2vh;
     padding: 1vh 0;
     max-width: 90%;
-    border-bottom: 4px solid yellow;
+    border-bottom: 4px solid var(--color4);
 
 }
 
@@ -151,7 +143,7 @@ strong {
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0px 10px 20px -10px var(--grayishBlue);
-    border-top: 3px solid yellow;
+    border-top: 3px solid var(--color4);
     background-color: white;
     padding: 1.5vh;
     background-color: white;
@@ -217,7 +209,7 @@ strong {
     width: 40%;
     border-radius: 5px;
     box-shadow: 0px 30px 40px -20px var(--grayishBlue);
-    border-top: 3px solid yellow;
+    border-top: 3px solid var(--color4);
     background-color: white;
     padding: 1.5vh;
 }
@@ -291,7 +283,7 @@ strong {
     width: 40%;
     border-radius: 5px;
     box-shadow: 0px 30px 40px -20px var(--grayishBlue);
-    border-top: 3px solid yellow;
+    border-top: 3px solid var(--color4);
     background-color: white;
     padding: 1.5vh;
     display: flex;
@@ -462,7 +454,7 @@ strong {
     flex-direction: row;
     border-radius: 5px;
     box-shadow: 0px 30px 40px -20px var(--grayishBlue);
-    border-top: 3px solid yellow;
+    border-top: 3px solid var(--color4);
     background-color: white;
     
 }
@@ -554,7 +546,7 @@ strong {
     font-weight: bolder;
     text-transform: uppercase;
     background-color: rgb(239, 248, 244);
-    box-shadow: 5px 3px 0 yellow;
+    box-shadow: 5px 3px 0 var(--color4);
     padding: 1rem 2rem;
      
 }
@@ -909,7 +901,7 @@ strong {
     border-radius: 50%;
     background-color: var(--color4);
     background: conic-gradient( 
-     red 6deg, orange 6deg 18deg, yellow 18deg 45deg, 
+     red 6deg, orange 6deg 18deg, var(--color4) 18deg 45deg, 
      green 45deg 110deg, blue 110deg 200deg, purple 200deg);
 }
 
