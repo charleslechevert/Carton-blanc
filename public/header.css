@@ -1,9 +1,6 @@
 :root {
     --color1: rgb(90, 122, 105);
-    --color2: rgb(173, 207, 159);
-    --color3: rgb(206, 216, 158);
     --color4: rgb(255, 253, 111);
-
     --grayishBlue: hsl(229, 6%, 66%);
   }
   
