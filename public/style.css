@@ -831,7 +831,6 @@ strong {
 }
 
 .playerranking__row {
-    margin : 1vh 0;
     text-transform: uppercase;
     border-bottom: 0.8px solid rgb(178, 171, 171);
     vertical-align: middle;
