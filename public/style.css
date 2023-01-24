@@ -934,6 +934,7 @@ strong {
     font-weight: bold;
     color: white;
     text-align: center;
+    vertical-align: middle;
 }
 
 .stats__perchart-label {
