@@ -29,6 +29,10 @@
     margin-top:10vh;
 }
 
+body {
+    background-color: #FAFAFA;
+}
+
 strong {
     font-weight: bold;
 }
